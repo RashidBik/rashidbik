@@ -27,15 +27,15 @@ const Project = ({item}) => {
 
         className='absolute bottom-0 border-b rounded-b-2xl h-16 w-full bg-accent flex flex-col'>
           <a href={item.href} 
-          className='text-2xl font-black hover:text-gray-100 font-lobster'>Lets See</a>
-          <span className=''>{item.discription}</span>
+          className='text-2xl font-black hover:text-gray-100 font-lobster text-white'>Lets See</a>
+          <span className=' text-gray-900'>{item.discription}</span>
         </div>
         )} 
      </div>
       <p className='capitalize text-accent text-sm' >
         {item.gategory}
         </p>
-      <h3 className='text-2xl font-semibold capitalize'>
+      <h3 className='text-2xl font-semibold capitalize text-gray-900'>
         {item.name}
         </h3>
     </div>

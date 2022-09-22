@@ -15,11 +15,11 @@ function About() {
               before:content-about relative 
               before:absolute before:opacity-40 
               before:-top[2rem] before:hidden 
-              before:lg:block font-black  font-lobster'> About
+              before:lg:block font-black  font-lobster text-gray-900'> About
               </h2>
               <p className='mb-2 text-accent text-xl font-black font-lobster'>I build and develop digital products</p>
               <hr className='mb-4 opacity-5' />
-              <p className='mb-2 indent-6 text-left font-madi text-[20px]'>
+              <p className='mb-2 indent-6 text-left font-madi text-[27px] text-gray-900'>
               <b>Hi, I’m RashidBik.</b> I'm a multi-talented human with over 5 years of experiences in wide range of design disciplines.
 editor, front-end developer, photographer, reporter and more.
 I don’t like to define myself by the work I’ve done. I define myself by the work I want to do. Skills can be taught, personality is inherent. I prefer to keep learning, continue challenging myself, and do interesting things that matter.

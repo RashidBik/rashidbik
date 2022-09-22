@@ -1,7 +1,8 @@
 import React, { useRef } from 'react'
 import {contact} from '../data'
-import emailjs from '@emailjs/browser';
-
+import emailjs from 'emailjs-com';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Contact() {
   const form = useRef();
@@ -10,13 +11,16 @@ function Contact() {
   
       emailjs.sendForm('service_71a5e8a', 'template_faj5edi', form.current, 'MM724zbCsMzXBRs_J')
         .then((result) => {
-            console.log(result.text);
+          toast.success('Successfuly was sent !', {
+            position: toast.POSITION.TOP_RIGHT
+        });
         }, (error) => {
             console.log(error.text);
         });
     };
   return (
     <div>
+       <ToastContainer />
     <img 
       className='w-full' 
       src='src/assets/img/footer.png' />
@@ -31,7 +35,7 @@ function Contact() {
                 lg:mb-2 font-bold text-white font-lobster'>
 Contact Me
           </h2>
-          <p className='subtitle mb-4 lg:mb-6 font-lobster'>
+          <p className='subtitle mb-4 lg:mb-6 font-lobster text-gray-900'>
             Ask Me A Question Or Hire Me Right Now
           </p>
         </div>
@@ -47,7 +51,7 @@ Contact Me
                 </div>
                 <div className=''>
                    <h4 className='font-body text-xl mb-1'>{title}</h4>
-                   <p className='mb-1 '>{subtitle}</p>
+                   <p className='mb-1 text-gray-900 '>{subtitle}</p>
                    <p className='text-white font-normal'>{description}</p>
                 </div>
               </div>
@@ -101,7 +105,7 @@ Contact Me
                  className='bg-accent border border-gray-400 resize-none w-full
                  outline-none p-6 rounded-sm h-[200px] 
                  focus:outline focus:outline-1 
-                 focus:outline-accent text-[22px]' 
+                 focus:outline-accent text-[22px] text-gray-900' 
                  placeholder='your message'>
               </textarea> 
               <button 

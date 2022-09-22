@@ -12,7 +12,7 @@ SwiperCore.use([Pagination]);
 const Skills = () => {
   return (
   <div className=''>
-    <p className='text-4xl font-madi font-black text-center font-lobster'>My Skill</p>
+    <p className='text-4xl font-madi font-black text-center font-lobster text-gray-900'>My Skill</p>
     <div className='py-2 bg-gray-900 mt-10'>
       <div className='' >
       <Swiper

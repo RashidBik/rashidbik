@@ -14,11 +14,11 @@ function Services() {
           before:absolute before:opacity-40
           before:-top-[2rem] before:-left-28
           before:hidden before:lg:block
-          text-3xl font-black mb-6 font-lobster'>
+          text-3xl font-black mb-6 font-lobster text-gray-900'>
               What I Do For Clients
           </h2>
           <p className='flex flex-col items-center px-6 lg:px-28 lg:text-[28px]
-           indent-8 pb-8 text-center font-madi'>
+           indent-8 pb-8 text-center font-madi text-gray-900'>
             As a front-end developer I use HTML,
              CSS, JavaScript and the most famouse library 
              react and also the handsome framework of css 
@@ -44,8 +44,8 @@ function Services() {
                   w-12 h-12 flex justify-center items-center mb-4 text-[28px]'>
                       {icon}
                   </div>
-                  <h4 className='text-xl font-medium'>{name}</h4>
-                  <p className=''>{description}</p>
+                  <h4 className='text-xl font-medium text-accent'>{name}</h4>
+                  <p className=' text-gray-900'>{description}</p>
               </div>
             })}
         </div>
