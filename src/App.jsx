@@ -1,34 +1,52 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import React,{useState,useEffect} from 'react';
+import './input.css';
+import Home from './Components/Home';
+import About from './Components/About';
+import Contact from './Components/Contact';
+import Services from './Components/Services';
+import Portfolio from './Components/Project/Portfolio';
+import Testimonials from './Components/Testimonials/Testimonials';
+import Header from './Components/Header/Header';
+import Brands from './Components/Brands';
+import Skills from './Components/Skills';
+import Footer from './Components/Footer';
+import BacKTotop from './Components/BacKTotop';
+import Show from './Show';
+import Loader from './Components/Loader';
+import { AnimatePresence } from 'framer-motion';
+import ErrorBoundry from './ErrorBoundry';
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
+ const [show, setShow] = useState(false);
+ const [isLoad, setIsLoad] = useState(false);
+ useEffect(() => {
+  setTimeout(() => {
+    setIsLoad(true)
+  }, 3000);
+ }, []);
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+   <AnimatePresence >
+      {!isLoad ? <Loader />
+      :(       
+     <div className="bg-white dark:bg-gray-900 scroll-smooth hover:scroll-auto ">
+         <Show show={show} setShow={setShow} />
+         <ErrorBoundry><Header/></ErrorBoundry>
+         <ErrorBoundry><Home setShow={setShow} /></ErrorBoundry>
+         <ErrorBoundry><Brands /></ErrorBoundry>
+         <ErrorBoundry><About /></ErrorBoundry>
+         <ErrorBoundry><Skills /></ErrorBoundry>
+         <ErrorBoundry><Portfolio /></ErrorBoundry>
+         <ErrorBoundry><Services /></ErrorBoundry>
+         <ErrorBoundry><Testimonials /></ErrorBoundry>
+         <ErrorBoundry><Contact /></ErrorBoundry>
+         <ErrorBoundry><Footer /></ErrorBoundry>
+         <ErrorBoundry><BacKTotop /></ErrorBoundry>
+     </div>
+       ) 
+       }
+   </AnimatePresence>
+  );
 }
 
-export default App
+export default App;

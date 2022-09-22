@@ -2,17 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
+/* @layer components {
   body {
     @apply font-body text-paragraph leading-6 bg-gray-200;
-  }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply text-white font-primary;
   }
   .section {
     @apply py-12 lg:py-32;
@@ -41,4 +33,4 @@
   .active {
     @apply text-accent;
   }
-}
+} */
