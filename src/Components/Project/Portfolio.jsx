@@ -11,7 +11,8 @@ const Portfolio = () => {
           <h2 className='section-title before:content-portfolio 
           relative before:ablolute before:opacity-40
           before:-top-[2rem] before:-left-3/4 
-          before:hidden before:lg:block text-3xl font-black font-lobster text-gray-900'>My Latest Work
+          before:hidden before:lg:block text-3xl font-black 
+          font-lobster'>My Latest Work
           </h2>
         <p>
 

@@ -35,7 +35,7 @@ const Project = ({item}) => {
       <p className='capitalize text-accent text-sm' >
         {item.gategory}
         </p>
-      <h3 className='text-2xl font-semibold capitalize text-gray-900'>
+      <h3 className='text-2xl font-semibold capitalize'>
         {item.name}
         </h3>
     </div>
