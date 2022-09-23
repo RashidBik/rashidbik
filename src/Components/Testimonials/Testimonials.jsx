@@ -12,7 +12,7 @@ function Testimonials() {
               before:content-testimonials relative
               before:absolute before:opacity-40
               before:top-[2rem] before:-left-64 
-              before:hidden before:lg:block text-3xl font-black mb-6 font-lobster'>
+              before:hidden before:lg:block text-3xl font-black mb-6 font-lobster text-gray-900'>
             What Other People Say
           </h2>
           <p className='subtitle font-bold text-md text-accent mb-6'>
