@@ -21,7 +21,7 @@ const Footer = () => {
             <img src="src/assets/img/RashidLogo.png"
                 className='w-[140px]'
           />            </div>
-            <p>
+            <p className='text-gray-900'>
                 &copy; 2022 All rights reserved.
             </p>
         </div>

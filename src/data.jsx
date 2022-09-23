@@ -1,24 +1,16 @@
 //  icons
 import {
-  FiYoutube,
-  FiInstagram,
-  FiGithub,
-  FiDribbble,
-  FiLayout,
-  FiSettings,
-  FiPenTool,
-  FiTag,
-  FiMail,
-  FiMapPin,
-  FiFacebook,
-  FiLinkedin,
-  // FaFacebookSquare,
-  // FaSlack,
-  // FaTelegram,
-  // FaWhatsapp,
-  // FaUbuntu,
-  // SiSololearn,
-} from 'react-icons/fi';
+  RiGithubFill,
+  RiDribbbleLine,
+  RiLayoutFill,
+  RiSettingsFill,
+  RiPenNibFill,
+  RiTaskFill,
+  RiMailFill,
+  RiMapPinFill,
+  RiFacebookBoxLine,
+  RiLinkedinFill,
+} from 'react-icons/ri';
 
 // companies icons
 import FreelancerBrandIcon from './assets/img/brands/freelancer.png';
@@ -88,19 +80,19 @@ export const navigation = [
 // social
 export const socialIcon = [
   {
-    icon: <FiFacebook />,
+    icon: <RiFacebookBoxLine />,
     href: 'https://www.facebook.com/badfoxxxxx/',
   },
   {
-    icon: <FiLinkedin />,
+    icon: <RiLinkedinFill />,
     href: 'https://www.linkedin.com/in/rashid-bik-b830b8202/',
   },
   {
-    icon: <FiGithub />,
+    icon: <RiGithubFill />,
     href: 'https://github.com/RashidBik',
   },
   {
-    icon: <FiDribbble />,
+    icon: <RiDribbbleLine />,
     href: 'https://dribbble.com/rashidbik',
   },
 ];
@@ -246,25 +238,25 @@ export const skills = [
 // services
 export const servicesData = [
   {
-    icon: <FiLayout />,
+    icon: <RiLayoutFill />,
     name: 'Web Design',
     description:
       'Transform app designs into front-end code with HTML, CSS, JavaScript/ react',
   },
   {
-    icon: <FiSettings />,
+    icon: <RiSettingsFill />,
     name: 'Web Development',
     description:
       'Work with back-end developers to integrate UI components with APIs and databases.',
   },
   {
-    icon: <FiPenTool />,
+    icon: <RiPenNibFill />,
     name: 'Branding',
     description:
       'Stay plugged into emerging technologies and industry trends.',
   },
   {
-    icon: <FiTag />,
+    icon: <RiTaskFill />,
     name: 'SEO',
     description:
       'Write high-quality, scalable, and reusable code, On-site search engine optimization (SEO).',
@@ -299,13 +291,13 @@ export const testimonials = [
 // contact
 export const contact = [
   {
-    icon: <FiMail />,
+    icon: <RiMailFill />,
     title: 'Have a question?',
     subtitle: 'I am here to help you.',
     description: 'Email me at rashidbik777@gmil.com',
   },
   {
-    icon: <FiMapPin />,
+    icon: <RiMapPinFill />,
     title: 'Current Location',
     subtitle: 'Kabul, Afghanistan',
     description: 'Serving clients worldwide',
