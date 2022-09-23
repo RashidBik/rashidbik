@@ -35,7 +35,7 @@ function Contact() {
                 lg:mb-2 font-bold text-white font-lobster'>
 Contact Me
           </h2>
-          <p className='subtitle mb-4 lg:mb-6 font-lobster'>
+          <p className='subtitle mb-4 lg:mb-6 font-lobster text-gray-900'>
             Ask Me A Question Or Hire Me Right Now
           </p>
         </div>
