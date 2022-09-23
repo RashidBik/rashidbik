@@ -20,11 +20,12 @@ function Home({setShow}) {
 
 
   return (
-    <section id='section' className='lg:h-[85vh] h-[78vh] flex items-center 
+    <section id='home' className='lg:h-[85vh] h-[78vh] flex items-center 
     lg:bg-cover bg-center bg-no-repeat  overflow-hidden
      bg-[url("./assets/img/wallpaper.jpg")]
-     bg-fixed
-    '>  
+     bg-fixed'
+     
+     >  
     <div className='w-full h-full  '> 
       <div className='container mx-auto h-full w-full '>
         <div className='flex items-center h-full pt-4 lg:pt-8'>
@@ -78,7 +79,6 @@ function Home({setShow}) {
               Work with me
             </motion.button>
           </div>
-          {/* </div> */}
         </div>
       </div>
      </div>

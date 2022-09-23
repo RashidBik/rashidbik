@@ -67,7 +67,7 @@ function NavMobile() {
         }}
         className='cursor-pointer absolute top-2 right-8'>
           <svg xmlns="http://www.w3.org/2000/svg" 
-            className="h-6 w-6" 
+            className="h-6 w-6 text-gray-900" 
             fill="none" 
             viewBox="0 0 24 24" 
             stroke="currentColor" 
@@ -87,7 +87,7 @@ function NavMobile() {
                  duration={1000}
                  offset={-70}
                  onClick={() => {setIsOpen(false)}}
-                 className='text-xl cursor-pointer capitalize hover:text-gray-300'>
+                 className='text-xl text-gray-900 cursor-pointer capitalize hover:text-gray-300'>
                 {item.name}
              </Link>
             </li>

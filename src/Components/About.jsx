@@ -3,7 +3,7 @@ import image from '../assets/img/rashid1.jpg';
 
 function About() {
   return (
-    <section className='py-12 lg:py-32 '>
+    <section className='py-12 lg:py-32 ' id='about'>
       <div className='container mx-auto'>
         <div className='flex flex-col xl:flex-row gap-2 lg:gap-24'>
           <img className='object-cover h-[540px] md:w-[500px] md:mx-auto

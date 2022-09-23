@@ -5,7 +5,7 @@ import TestimonialSlider from './TestimonialSlider'
 function Testimonials() {
 
   return (
-    <section id='Testimonials' className='mt-6'>
+    <section id='testimonials' className='mt-6'>
       <div className='container my-auto'>
         <div className='flex flex-col items-center text-center'>
           <h2 className='section-title 
