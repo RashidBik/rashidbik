@@ -268,21 +268,21 @@ export const testimonials = [
   {
     authorImg: TestiImage1,
     authorText:
-      'Love the simplicity of the service and the prompt customer support. We can’t imagine working without it.',
+      'Lorem ipsum Love the simplicity of the service and the prompt customer support. We can’t imagine working without it.',
     authorName: 'Olivia Doe',
     authorPosition: 'Head of Design, Google',
   },
   {
     authorImg: TestiImage2,
     authorText:
-      'Love the simplicity of the service and the prompt customer support. We can’t imagine working without it.',
+      'Lorem ipsum Love the simplicity of the service and the prompt customer support. We can’t imagine working without it.',
     authorName: 'Olivia Doe',
     authorPosition: 'Head of Design, Google',
   },
   {
     authorImg: TestiImage3,
     authorText:
-      'Love the simplicity of the service and the prompt customer support. We can’t imagine working without it.',
+      'Lorem ipsum Love the simplicity of the service and the prompt customer support. We can’t imagine working without it.',
     authorName: 'Olivia Doe',
     authorPosition: 'Head of Design, Google',
   },
