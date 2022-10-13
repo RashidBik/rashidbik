@@ -136,7 +136,7 @@ export const projectsData = [
     image: Project2,
     name: 'JS_Method',
     category: 'web development',
-    href: '',
+    href: 'https://javascript-tutorial-rho.vercel.app/',
     discription: 'Lets learn JS methods easily',
   },
   {
