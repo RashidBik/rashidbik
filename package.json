@@ -10,11 +10,13 @@
   },
   "dependencies": {
     "@babel/runtime-corejs2": "^7.19.2",
+    "chart.js": "^4.2.1",
     "emailjs": "^4.0.1",
     "emailjs-com": "^3.2.0",
     "framer-motion": "^7.3.6",
     "heroicons": "^2.0.11",
     "react": "^18.2.0",
+    "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.2.0",
     "react-icon": "^1.0.0",
     "react-icons": "^4.4.0",
