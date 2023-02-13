@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+/* 
 @layer base {
   body {
     @apply text-paragraph leading-6 bg-gray-200;
@@ -41,4 +41,4 @@
   .active {
     @apply text-accent;
   }
-}
+} */
