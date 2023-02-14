@@ -1,9 +1,14 @@
-import React from 'react'
+// import axios from 'axios';
+import { useState, useEffect } from 'react';
 import image from '../assets/img/rashid2.jpg';
 import logo from '../assets/img/RB_PNG.png';
 import LineChart from './about/LineChart';
 
 function About() {
+  const [like, setLike] = useState(false);
+  const [likeNum, setLikeNum] = useState(10);
+
+
   return (
     <>
     <section className='py-2' id='about'>
@@ -18,9 +23,14 @@ function About() {
         {/* <img src="../assets/img/RB_PNG.png" alt="" /> */}
       </div>
      <div className=' rounded-full border -translate-y-10 md:-translate-y-16 border-red-700  '>
-     <div className='border rounded-full h-20 w-20 md:h-60 md:w-60 bg-cover ' style={{backgroundImage: `url(${image})`}}>
-      </div>
+      <div className='border rounded-full h-20 w-20 md:h-60 md:w-60 bg-cover ' style={{backgroundImage: `url(${image})`}}></div>
      </div>
+     <p className='flex'> 
+      <p>{likeNum}</p>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="red" className="w-6 h-6">
+        <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
+      </svg>
+     </p>
     {/* //////////// */}
     <div className='grid md:grid-cols-2 md:px-16 md:py-8'>
     
@@ -29,8 +39,8 @@ function About() {
             <div className='flex justify-between p-4 bg-slate-300 text-xl md:text-2xl'>
               <span>$</span>
               <p>Rashid Bik</p>
-              <span>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" class="w-6 h-6">
+              <span onClick={()=> setLike(true)}>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
                 </svg>
               </span>

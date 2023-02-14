@@ -1,5 +1,4 @@
 import React,{useState,useEffect} from 'react';
-import './input.css';
 import Home from './Components/Home';
 import About from './Components/About';
 import Contact from './Components/Contact';
@@ -23,7 +22,7 @@ function App() {
  useEffect(() => {
   setTimeout(() => {
     setIsLoad(true)
-  }, 3000);
+  }, 500);
  }, []);
   return (
    <AnimatePresence >
