@@ -13,7 +13,7 @@ const Project = ({item}) => {
   return (
     <div key={item.id} 
          className='flex flex-col items-center text-center '>
-      <div className='mb-8 relative bg-clip-content rounded-2xl'>
+      <div className=' relative bg-clip-content rounded-2xl'>
         <img className='rounded-2xl shadow-md shadow-gray-700
          hover:bg-clip-content 
          hover:opacity-40' 

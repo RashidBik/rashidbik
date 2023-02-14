@@ -4,9 +4,10 @@ import {projectNav} from '../../data';
 import Project from './Project';
 
 const Projects = () => {
-    const [item, setItem] = useState({name: 'all'});
+    const [item, setItem] = useState({name: ''});
     const [project, setProject] = useState([]);
     const [active, setActive] = useState(0);
+ 
 
     useEffect(() =>{
         if (item.name === 'all') {
@@ -14,8 +15,7 @@ const Projects = () => {
        }else{
         const newProject = projectsData.filter(
             (project) => {
-                return project.category.toLowerCase() === 
-                item.name;
+                return project.category.toLowerCase() === item.name;
             }
         );
             setProject(newProject);
@@ -28,9 +28,9 @@ const Projects = () => {
     }
 
     return (
-    <div>
+    <div >
       <nav className='mb-12 max-w-xl mx-auto'>
-        <ul className='flex flex-col md:flex-row 
+        <ul  className='flex flex-col md:flex-row 
         justify-evenly items-center font-bold'
         >
             {projectNav.map((item,index) =>{
@@ -40,22 +40,21 @@ const Projects = () => {
 
                     }}
                     className={`${active === index ? 'active' : ''}
-                    cursor-pointer capitalize m-4 hover:text-gray-900`}
+                    cursor-pointer capitalize m-4 hover:text-gray-800`}
                     key={index} >{item.name}</li>
                 )
             })}
         </ul>
       </nav>
-      <section className='grid lg:grid-cols-3
-      gap-y-12 lg:gap-x-8 lg:gap-y-8'>
-            {
-                project.map((item) => {
-                    return (
-                        <Project item={item} key={item.id} />
-                    )
-                })
-            }
-      </section>
+    <section className='grid grid-cols-2  lg:grid-cols-3 gap-y-12 gap-x-8'>
+        {
+            project.map((item) => {
+                return (
+                    <Project item={item} key={item.id} />
+                )
+            })
+        }
+    </section>
     </div>
   )
 }
