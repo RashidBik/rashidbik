@@ -13,9 +13,9 @@ const Project = ({item}) => {
   return (
     <div key={item.id} 
          className='flex flex-col items-center text-center '>
-      <div className='mb-8 relative bg-gray-900 bg-clip-content rounded-2xl'>
+      <div className='mb-8 relative bg-clip-content rounded-2xl'>
         <img className='rounded-2xl shadow-md shadow-gray-700
-         bg-gray-900 hover:bg-clip-content 
+         hover:bg-clip-content 
          hover:opacity-40' 
         src={item.image} alt='img' 
         onMouseOver={pictureNav}
@@ -25,14 +25,14 @@ const Project = ({item}) => {
        onMouseOver={pictureNav}
        onMouseOut={unPictureNav}
 
-        className='absolute bottom-0 border-b rounded-b-2xl h-16 w-full bg-accent flex flex-col'>
+        className='absolute bottom-0 border-b rounded-b-2xl h-16 w-full flex flex-col'>
           <a href={item.href} 
-          className='text-2xl font-black hover:text-gray-100 font-lobster text-white'>Lets See</a>
-          <span className=' text-gray-900'>{item.discription}</span>
+          className='text-2xl font-black hover:text-gray-100 font-lobster '>Lets See</a>
+          <span className=' '>{item.discription}</span>
         </div>
         )} 
      </div>
-      <p className='capitalize text-accent text-sm' >
+      <p className='capitalize  text-sm' >
         {item.gategory}
         </p>
       <h3 className='text-2xl font-semibold capitalize'>

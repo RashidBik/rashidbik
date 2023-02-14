@@ -11,7 +11,7 @@ function Nav() {
         {navigation.map((item,index) =>{
           return(
             <li 
-            className='text-white
+            className='
             hover:text-accent cursor-pointer'
             key={index}
             >

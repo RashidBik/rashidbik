@@ -12,7 +12,7 @@ SwiperCore.use([Pagination]);
 const Skills = () => {
   return (
   <div className=''>
-    <div className='py-2 bg-gray-100 '>
+    <div className='py-2 '>
       <div className='' >
       <Swiper
         loop={true}

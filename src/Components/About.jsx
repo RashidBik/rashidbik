@@ -1,7 +1,6 @@
-// import axios from 'axios';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import image from '../assets/img/rashid2.jpg';
-import logo from '../assets/img/RB_PNG.png';
+import logo from '../assets/img/rashidbik.svg';
 import LineChart from './about/LineChart';
 
 function About() {
@@ -13,16 +12,16 @@ function About() {
     <>
     <section className='py-2' id='about'>
         <div className='border flex flex-col justify-center items-center '>
-      <div className=' flex justify-between p-2 w-full bg-slate-200 md:p-12 md:text-2xl '>
-        <span className='h-16 w-16 bg-contain ' style={{backgroundImage: `url(${logo})`}}></span>
+      <div className=' flex justify-between p-2 w-full md:p-12 md:text-2xl '>
+        <span className='h-16 w-16 bg-contain bg-no-repeat' style={{backgroundImage: `url(${logo})`}}></span>
         <div className='flex flex-col text-center pt-4 pb-6'>
           <p>Hi, I’m RashidBik</p>
-          <p className='text-accent text-xl font-black font-lobster'>I build and develop digital products</p>
+          <p className=' text-xl font-black font-lobster'>I build and develop digital products</p>
         </div>
         <span className='hidden md:flex bg-[url()]'>logo</span>
         {/* <img src="../assets/img/RB_PNG.png" alt="" /> */}
       </div>
-     <div className=' rounded-full border -translate-y-10 md:-translate-y-16 border-red-700  '>
+     <div className=' rounded-full border -translate-y-10 md:-translate-y-16   '>
       <div className='border rounded-full h-20 w-20 md:h-60 md:w-60 bg-cover ' style={{backgroundImage: `url(${image})`}}></div>
      </div>
      <p className='flex'> 
@@ -54,7 +53,9 @@ function About() {
                   <a className=' text-red-500' href='src/assets/ressume/Rashidbik-Ressume2022.pdf' download='src/assets/ressume/Rashidbik-Ressume2022.pdf' title='(pdf 49.8kb)'> My resume </a>more in the PDF attached bellow
                 </div>
                 <div className='px-2 py-4'>
-                  <button className=' w-full py-2 rounded-md bg-red-500'>Support $5</button>
+                  <button className=' w-full py-2 rounded-md bg-red-500'>
+                  <a href='https://www.buymeacoffee.com/abdurashidu'>Support $5</a>
+                  </button>
                 </div>
             </div>
           </div>

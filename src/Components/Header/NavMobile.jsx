@@ -40,7 +40,7 @@ function NavMobile() {
            className='cursor-pointer ' >
           <svg 
           xmlns="http://www.w3.org/2000/svg" 
-               className="h-7 w-7 text-white" viewBox="0 0 20 20" 
+               className="h-7 w-7 " viewBox="0 0 20 20" 
                fill="currentColor">
             <path fillRule="evenodd" 
                   d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" 
@@ -52,7 +52,7 @@ function NavMobile() {
         variants={circleVariants}
         initial='hidden' 
         animate={isOpen ? 'visible' : 'hidden'}
-        className='w-4 h-4 rounded-full bg-accent hover:bg-accent-hover  fixed top-0 right-0'>
+        className='w-4 h-4 rounded-full hover:bg-accent-hover  fixed top-0 right-0'>
       </motion.div>
 
       <motion.ul 
@@ -67,7 +67,7 @@ function NavMobile() {
         }}
         className='cursor-pointer absolute top-2 right-8'>
           <svg xmlns="http://www.w3.org/2000/svg" 
-            className="h-6 w-6 text-gray-900" 
+            className="h-6 w-6 " 
             fill="none" 
             viewBox="0 0 24 24" 
             stroke="currentColor" 
@@ -87,7 +87,7 @@ function NavMobile() {
                  duration={1000}
                  offset={-70}
                  onClick={() => {setIsOpen(false)}}
-                 className='text-xl text-gray-900 cursor-pointer capitalize hover:text-gray-300'>
+                 className='text-xl cursor-pointer capitalize hover:text-gray-300'>
                 {item.name}
              </Link>
             </li>

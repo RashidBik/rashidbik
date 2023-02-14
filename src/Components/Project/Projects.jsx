@@ -29,7 +29,7 @@ const Projects = () => {
 
     return (
     <div>
-      <nav className='mb-12 max-w-xl mx-auto text-accent'>
+      <nav className='mb-12 max-w-xl mx-auto'>
         <ul className='flex flex-col md:flex-row 
         justify-evenly items-center font-bold'
         >

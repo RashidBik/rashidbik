@@ -15,7 +15,7 @@ function SocialM() {
           whileHover={{rotate: 0}}
           transition={{type: 'spring', stiffness: 150}}
           className='flex justify-center 
-          items-center text-white' key={index}>
+          items-center ' key={index}>
             <a className='text-base' href={item.href} >
               {item.icon}
             </a>

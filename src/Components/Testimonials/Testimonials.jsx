@@ -13,7 +13,7 @@ function Testimonials() {
               before:hidden before:lg:block text-3xl font-black mb-6 font-lobster'>
             What Other People Say
           </h2>
-          <p className='subtitle font-bold text-md text-accent mb-6'>
+          <p className='subtitle font-bold text-md mb-6'>
             I Love To Hear From You
           </p>
         </div>

@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import React from 'react'
 import {servicesData} from '../data'
 
@@ -39,14 +38,14 @@ function Services() {
         <div className='grid lg:grid-cols-4 gap-8'>
             {servicesData.map((service, index) => {
               const {icon, name, description} = service;
-              return <div className='bg-gray-100 p-6
+              return <div className=' p-6
                rounded-2xl shadow-md shadow-gray-400' key={index}>
-                  <div className='text-accent rounded-sm 
+                  <div className=' rounded-sm 
                   w-12 h-12 flex justify-center items-center mb-4 text-[28px]'>
                       {icon}
                   </div>
-                  <h4 className='text-xl font-medium text-accent'>{name}</h4>
-                  <p className=' text-gray-900'>{description}</p>
+                  <h4 className='text-xl font-medium '>{name}</h4>
+                  <p className=''>{description}</p>
               </div>
             })}
         </div>

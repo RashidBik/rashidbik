@@ -12,10 +12,10 @@ const Header = () => {
     });
     
   return (
-    <header className={`${ bg ? 'bg-gray-900 h-10' : 'h-24'}
+    <header className={`${ bg ? 'bg-gray-50 text-gray-900 h-10' : 'h-24 text-white'}
     flex items-center fixed top-0 w-full z-20 transation-all duration-300`}>
       <div className='container mx-auto h-full flex items-center justify-between '>
-        <a className='text-white text-[30px] font-[cursive]' href='home'>
+        <a className='text-[30px] font-[cursive]' href='home'>
           Rashid Bik 
         </a>
         <div className='hidden lg:block '>

@@ -29,12 +29,12 @@ function Home({setShow}) {
     <div className='w-full h-full  '> 
       <div className='container mx-auto h-full w-full '>
         <div className='flex items-center h-full pt-4 lg:pt-8'>
-          <div className='flex-1 flex flex-col items-center lg:items-center text-gray-100  '>
+          <div className='flex-1 flex flex-col items-center lg:items-center '>
             <motion.div 
             variants={motionVarient}
             initial="hidden"
             animate="visible"
-            className='lg:text-3xl lg:mt-20 mb-8 lg:mb-2 text-white
+            className='lg:text-3xl lg:mt-20 mb-8 lg:mb-2 
             font-[cursive] '>
               {/* Hey I Am Rashid Bik */}
             </motion.div>
@@ -43,9 +43,9 @@ function Home({setShow}) {
             whileTap={{rotate: 2}}
             transition={{type: 'spring', stiffness: 400}}
             className='leading-[44px] md:leading-tight lg:text-8xl text-6xl 
-            lg:leading-[1.2] font-madi font-bold md:tracking-[-2px] mix-blend-difference'>
-               Front End <br /> Developer</motion.h3>
-            <div className='pt-4 pb-4 lg:pb-2 lg:pt-0 md: pt-6 md:pb-12 max-w-[480px] lg:text-lg font-madi
+            lg:leading-[1.2] font-madi font-bold md:tracking-[-2px] mix-blend-difference text-white'>
+               FullStack <br /> Web Developer</motion.h3>
+            <div className='pb-4 lg:pb-2 lg:pt-0 md: pt-6 md:pb-12 max-w-[480px] lg:text-lg font-madi
             text-center '>
               I
             <TypeAnimation
@@ -60,13 +60,13 @@ function Home({setShow}) {
                 cursor={true}
                 repeat={Infinity}
                 style={{ fontSize: '2em' }}
-                className="text-gray-500 lg:text-gray-100"
+                className=""
               />
             </div>
             <div className='font-madi'>You</div>
             <motion.button className='py-4 mt-2 px-7 sm:mb-6 font-medium 
-            text-white flex items-center justify-center 
-            rounded-sm transition-all h-[48px] bg-accent 
+            flex items-center justify-center 
+            rounded-sm transition-all h-[48px]
             hover:bg-accent-hover md:btn-lg
             transation-all font-lobster'
             initial={{scale: 1.9}}
