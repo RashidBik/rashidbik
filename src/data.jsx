@@ -239,7 +239,7 @@ export const skills = [
 export const servicesData = [
   {
     icon: <RiLayoutFill />,
-    name: 'Web Design',
+    name: 'Improved Native Cybersecurity',
     description:
       'Transform app designs into front-end code with HTML, CSS, JavaScript/ react',
   },
@@ -258,6 +258,60 @@ export const servicesData = [
   {
     icon: <RiTaskFill />,
     name: 'SEO',
+    description:
+      'Write high-quality, scalable, and reusable code, On-site search engine optimization (SEO).',
+  },
+  {
+    icon: <RiTaskFill />,
+    name: 'Progressive Web Apps (PWAs)',
+    description:
+      'Write high-quality, scalable, and reusable code, On-site search engine optimization (SEO).',
+  },
+  {
+    icon: <RiTaskFill />,
+    name: 'AI Chatbots',
+    description:
+      'Write high-quality, scalable, and reusable code, On-site search engine optimization (SEO).',
+  },
+  {
+    icon: <RiTaskFill />,
+    name: 'Accelerated Mobile Pages',
+    description:
+      'Write high-quality, scalable, and reusable code, On-site search engine optimization (SEO).',
+  },
+  {
+    icon: <RiTaskFill />,
+    name: 'Single-Page Application',
+    description:
+      'Write high-quality, scalable, and reusable code, On-site search engine optimization (SEO).',
+  },
+  {
+    icon: <RiTaskFill />,
+    name: 'Optimized Voice Search',
+    description:
+      'Write high-quality, scalable, and reusable code, On-site search engine optimization (SEO).',
+  },
+  {
+    icon: <RiTaskFill />,
+    name: 'Motion UI',
+    description:
+      'Write high-quality, scalable, and reusable code, On-site search engine optimization (SEO).',
+  },
+  {
+    icon: <RiTaskFill />,
+    name: 'Serverless Architecture',
+    description:
+      'Write high-quality, scalable, and reusable code, On-site search engine optimization (SEO).',
+  },
+  {
+    icon: <RiTaskFill />,
+    name: 'Responsive Site Design',
+    description:
+      'Write high-quality, scalable, and reusable code, On-site search engine optimization (SEO).',
+  },
+  {
+    icon: <RiTaskFill />,
+    name: 'Dark Mode Standardization',
     description:
       'Write high-quality, scalable, and reusable code, On-site search engine optimization (SEO).',
   },

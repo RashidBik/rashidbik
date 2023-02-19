@@ -1,5 +1,6 @@
 import React from 'react'
 import {servicesData} from '../data'
+import BlogPage from './blog/BlogPage';
 
 
 function Services() {
@@ -34,6 +35,7 @@ function Services() {
              fundamentals and the overall user experience
              of a website.
           </p>
+          <BlogPage />
         </div>
         <div className='grid lg:grid-cols-4 gap-8'>
             {servicesData.map((service, index) => {
