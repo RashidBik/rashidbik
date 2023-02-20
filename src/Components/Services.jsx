@@ -2,7 +2,6 @@ import React from 'react'
 import {servicesData} from '../data'
 import BlogPage from './blog/BlogPage';
 
-
 function Services() {
   return (
     <div id='services' 
@@ -15,7 +14,7 @@ function Services() {
           before:-top-[2rem] before:-left-28
           before:hidden before:lg:block
           text-3xl font-black mb-6 font-lobster'>
-              What I Do For Clients
+              Key trending features for enterprise web apps
           </h2>
           <p className='flex flex-col items-center px-6 lg:px-28 lg:text-[28px]
            indent-8 pb-8 text-center font-madi'>
@@ -37,19 +36,17 @@ function Services() {
           </p>
           <BlogPage />
         </div>
-        <div className='grid lg:grid-cols-4 gap-8'>
+        <div className='flex flex-wrap gap-8 p-6 rounded-2xl shadow-md shadow-gray-400 '>
             {servicesData.map((service, index) => {
               const {icon, name, description} = service;
-              return <div className=' p-6
-               rounded-2xl shadow-md shadow-gray-400' key={index}>
-                  <div className=' rounded-sm 
-                  w-12 h-12 flex justify-center items-center mb-4 text-[28px]'>
+              return <div className='' key={index}>
+                  <div title={description} className='rounded-sm w-12 h-12 flex justify-center items-center mb-4 text-[28px] '>
                       {icon}
                   </div>
-                  <h4 className='text-xl font-medium '>{name}</h4>
-                  <p className=''>{description}</p>
+                    <h4 className='' >{name}</h4>
+                  {/* // <p className=''></p> */}
               </div>
-            })}
+            }) }
         </div>
       </div>
     </div>

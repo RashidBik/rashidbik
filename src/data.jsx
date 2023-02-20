@@ -2,7 +2,6 @@
 import {
   RiGithubFill,
   RiDribbbleLine,
-  RiLayoutFill,
   RiSettingsFill,
   RiPenNibFill,
   RiTaskFill,
@@ -11,6 +10,14 @@ import {
   RiFacebookBoxLine,
   RiLinkedinFill,
 } from 'react-icons/ri';
+
+import { MdSecurity, MdMobileFriendly, MdAutoAwesomeMotion } from "react-icons/md";
+import { IoLogoPwa } from "react-icons/io5";
+import { SiChatbot, SiServerless } from "react-icons/si";
+import { BsPalette2 } from "react-icons/bs";
+import { BiUserVoice } from "react-icons/bi";
+import { DiResponsive } from "react-icons/di";
+import { CgDarkMode } from "react-icons/cg";
 
 // companies icons
 import FreelancerBrandIcon from './assets/img/brands/freelancer.png';
@@ -235,10 +242,12 @@ export const skills = [
   },
 ];
 
+
+
 // services
 export const servicesData = [
   {
-    icon: <RiLayoutFill />,
+    icon: <MdSecurity />,
     name: 'Improved Native Cybersecurity',
     description:
       'Transform app designs into front-end code with HTML, CSS, JavaScript/ react',
@@ -262,55 +271,55 @@ export const servicesData = [
       'Write high-quality, scalable, and reusable code, On-site search engine optimization (SEO).',
   },
   {
-    icon: <RiTaskFill />,
+    icon: <IoLogoPwa />,
     name: 'Progressive Web Apps (PWAs)',
     description:
       'Write high-quality, scalable, and reusable code, On-site search engine optimization (SEO).',
   },
   {
-    icon: <RiTaskFill />,
+    icon: <SiChatbot />,
     name: 'AI Chatbots',
     description:
       'Write high-quality, scalable, and reusable code, On-site search engine optimization (SEO).',
   },
   {
-    icon: <RiTaskFill />,
+    icon: <MdMobileFriendly />,
     name: 'Accelerated Mobile Pages',
     description:
       'Write high-quality, scalable, and reusable code, On-site search engine optimization (SEO).',
   },
   {
-    icon: <RiTaskFill />,
+    icon: <BsPalette2 />,
     name: 'Single-Page Application',
     description:
       'Write high-quality, scalable, and reusable code, On-site search engine optimization (SEO).',
   },
   {
-    icon: <RiTaskFill />,
+    icon: <BiUserVoice />,
     name: 'Optimized Voice Search',
     description:
       'Write high-quality, scalable, and reusable code, On-site search engine optimization (SEO).',
   },
   {
-    icon: <RiTaskFill />,
+    icon: <MdAutoAwesomeMotion />,
     name: 'Motion UI',
     description:
       'Write high-quality, scalable, and reusable code, On-site search engine optimization (SEO).',
   },
   {
-    icon: <RiTaskFill />,
+    icon: <SiServerless />,
     name: 'Serverless Architecture',
     description:
       'Write high-quality, scalable, and reusable code, On-site search engine optimization (SEO).',
   },
   {
-    icon: <RiTaskFill />,
+    icon: <DiResponsive />,
     name: 'Responsive Site Design',
     description:
       'Write high-quality, scalable, and reusable code, On-site search engine optimization (SEO).',
   },
   {
-    icon: <RiTaskFill />,
+    icon: <CgDarkMode />,
     name: 'Dark Mode Standardization',
     description:
       'Write high-quality, scalable, and reusable code, On-site search engine optimization (SEO).',
