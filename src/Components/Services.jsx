@@ -1,8 +1,10 @@
-import React from 'react'
+import { useState } from 'react'
 import {servicesData} from '../data'
 import BlogPage from './blog/BlogPage';
 
 function Services() {
+  const [state, setState] = useState(false);
+
   return (
     <div id='services' 
     className='border-y py-6'>
@@ -36,14 +38,39 @@ function Services() {
           </p>
           <BlogPage />
         </div>
-        <div className='flex flex-wrap gap-8 p-6 rounded-2xl shadow-md shadow-gray-400 '>
+        <div className=' w-full border p-4 flex flex-wrap justify-center align-middle items-center '>
             {servicesData.map((service, index) => {
               const {icon, name, description} = service;
-              return <div className='' key={index}>
-                  <div title={description} className='rounded-sm w-12 h-12 flex justify-center items-center mb-4 text-[28px] '>
-                      {icon}
+              return <div className='w-16 p-1 grid grid-cols-4' key={index}>
+                <div title={ description } className='
+                  h-10 w-10 
+                  bg-slate-300
+                  flex justify-center
+                  items-center
+                  hover:border border-green-300
+                  relative
+                                
+                  before:absolut
+                  before:bg-slate-300
+                  hover:before:border
+                before:border-green-300
+                  before:z-0
+                  z-10
+                  before:w-10
+                  before:h-10
+                  before:rotate-45
+                 '>
+                  <div onClick={()=> setState(!state)}
+                    className='absolute text-2xl z-20  
+                    bg-slate-300 h-9 w-9 
+                    flex justify-center
+                                items-center'>
+                     {icon}
+                     {
+                      state &&  <h4 className='text-gray-50 hover:text-black' >{ name }</h4>
+                     }
+                     </div>
                   </div>
-                    <h4 className='' >{name}</h4>
                   {/* // <p className=''></p> */}
               </div>
             }) }
