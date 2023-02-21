@@ -20,24 +20,15 @@ function Services() {
           </h2>
           <p className='flex flex-col items-center px-6 lg:px-28 lg:text-[28px]
            indent-8 pb-8 text-center font-madi'>
-            As a front-end developer I use HTML,
-             CSS, JavaScript and the most famouse library 
-             react and also the handsome framework of css 
-             Tailwind to build the client side of a website.
-             They are responsible for building the visual
-             elements on a page, such as the layout, buttons,
-             menus, forms, and other features that users
-             will see and interact with when they visit
-             a webpage. In contrast with back-end
-             developers, who handle the business
-             logic and data management requirements
-             that power websites from behind the
-             scenes, I have a firm grasp of web design
+            As a fullstack developer I use ,
+            defferint web Technologies to create feature rich and user friendly 
+            web applications.
+            I have a firm grasp of web development
              fundamentals and the overall user experience
-             of a website.
+             of a web app.
           </p>
         </div>
-        <div className=' w-full border p-4 flex flex-wrap justify-center align-middle items-center '>
+        <div className=' w-full p-4 flex flex-wrap justify-center align-middle items-center '>
             <BlogPage />
         </div>
       </div>
