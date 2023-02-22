@@ -238,21 +238,21 @@ export const testimonials = [
   {
     authorImg: TestiImage1,
     authorText:
-      'Lorem ipsum Love the simplicity of the service and the prompt customer support. We can’t imagine working without it.',
+      '',
     authorName: 'Olivia Doe',
     authorPosition: 'Head of Design, Google',
   },
   {
     authorImg: TestiImage2,
     authorText:
-      'Lorem ipsum Love the simplicity of the service and the prompt customer support. We can’t imagine working without it.',
+      '',
     authorName: 'Olivia Doe',
     authorPosition: 'Head of Design, Google',
   },
   {
     authorImg: TestiImage3,
     authorText:
-      'Lorem ipsum Love the simplicity of the service and the prompt customer support. We can’t imagine working without it.',
+      '',
     authorName: 'Olivia Doe',
     authorPosition: 'Head of Design, Google',
   },
@@ -264,7 +264,7 @@ export const contact = [
     icon: <RiMailFill />,
     title: 'Have a question?',
     subtitle: 'I am here to help you.',
-    description: 'Email me at rashidbik777@gmil.com',
+    description: 'Email me at abdurashid.bigzad1999@gmil.com',
   },
   {
     icon: <RiMapPinFill />,

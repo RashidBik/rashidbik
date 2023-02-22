@@ -19,24 +19,26 @@ const TestimonialSlider = () => {
                pauseOnMouseEnter:true,
                stopOnLastSlide:false
            }}
-           slidesPerView={3}
-           className='mySwiper m-0 flex justify-center'
+           slidesPerView={1}
+           className='mySwiper flex justify-center'
           >  
          {testimonials.map((item, index) => {
             const {authorImg, authorText, authorName, authorPosition} = item;
             return (
                <SwiperSlide key={index} >
-                <div className='flex flex-col justify-between px-6 lg:px-10'>
-                 <img className='rounded-2xl w-[100px] lg:w-[200px]' src={authorImg} alt='' />
-                   <div className=''>
+                <div className=' border-t pt-6 bg-red-800'>
+                  <div className='h-40 !bg-cover bg-blend-overlay  !bg-center !bg-no-repeat  ' style={ { background: `url(${ authorImg })` } }  >  
+                   <div className='text-center pt-6 '>
                      <div className=''>
-                        <p className='font-bold text-[8px] lg:text-xl'>{authorName}</p>
-                        <p className='text-[8px] lg:text-xl'>{authorPosition}</p>
+                        <p className='font-bold'>{authorName}</p>
+                        <p className=''>{authorPosition}</p>
                       </div>
-                      <h5 className='font-body italic font-normal lg:w-60 text-[8px] lg:text-xl' >
-                        {authorText}
+                      <h5 className='font-body italic font-normal' >
+                        { authorText }
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam asperiores iusto et molestiae aut qui impedit, non aliquam itaque praesentium illo nesciunt quaerat omnis assumenda repudiandae doloremque iure reprehenderit officiis.
                       </h5>
                     </div>
+                 </div>
                 </div> 
               </SwiperSlide>
             )

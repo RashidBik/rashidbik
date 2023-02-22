@@ -1,10 +1,11 @@
 import React from 'react'
 import TestimonialSlider from './TestimonialSlider'
+import Comment from './Comment'
 
 function Testimonials() {
   return (
-    <section id='testimonials' className='mt-6'>
-      <div className='container my-auto'>
+    <section id='testimonials' className='py-4 px-2 md:px-10 flex flex-col justify-center'>
+      <div className=''>
         <div className='flex flex-col items-center text-center'>
           <h2 className='section-title 
               before:content-testimonials relative
@@ -14,8 +15,11 @@ function Testimonials() {
             What Other People Say
           </h2>
           <p className='subtitle font-bold text-md mb-6'>
-            I Love To Hear From You
+            leave your comments here
           </p>
+          <div className='py-4 w-full'>
+             <Comment />
+          </div>
         </div>
         <TestimonialSlider />
       </div>
