@@ -41,7 +41,7 @@ const Comment = () =>{
         auth ? (
             <form onSubmit={addComment}>
               <div className='p-4'>
-                  <textarea className='w-full h-11 rounded-xl p-2' type="text" ref={commentRef} placeholder='write your comment here' />  
+                  <textarea className='w-full h-11 rounded-xl p-2' type="text" ref={commentRef} placeholder='write your comment here' required/>  
                   <input type="submit" value="Add" className=' hover:border border-red-300 text-gray-50 py-1 px-4 rounded-lg bg-red-500 mt-4'/>
               </div>
             </form>
@@ -56,7 +56,7 @@ const Comment = () =>{
            <div className='w-full flex py-4'>
               <button onClick={()=> setComment(true)}
                 className=' hover:border border-red-300 text-gray-50 py-2 px-4 rounded-lg bg-red-500 '>write comment</button>
-              <input className='ml-4 border-l' type="text" disabled="true" placeholder='write your comment...' />
+              <input className='ml-4 border-l bg-inherit' type="text" disabled="true" placeholder='write your comment...' />
             </div> 
       )}
       <div>

@@ -11,8 +11,8 @@ function About() {
 
   return (
     <>
-    <section className='py-2' id='about'>
-        <div className='border flex flex-col justify-center items-center '>
+    <section className='pb-8' id='about'>
+        <div className=' flex flex-col justify-center items-center '>
       <div className=' flex justify-between p-2 w-full md:p-12 md:text-2xl bg-red-400 '>
         <span className='h-16 w-16 bg-contain bg-no-repeat' style={{backgroundImage: `url(${logo})`}}></span>
         <div className='flex flex-col text-center pt-4 pb-6'>
@@ -34,7 +34,7 @@ function About() {
     
       <div className=' px-6'>
           <div className='border text-center border-red-900 rounded-md'>
-            <div className='flex justify-between p-4 bg-slate-300 text-xl md:text-2xl'>
+            <div className='flex justify-between p-4 border-b border-slate-300 text-xl rounded-md md:text-2xl'>
               <span>$</span>
               <p>Rashid Bik</p>
               <span onClick={()=> setLike(true)}>

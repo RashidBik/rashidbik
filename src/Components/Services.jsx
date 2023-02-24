@@ -7,8 +7,8 @@ function Services() {
 
   return (
     <div id='services' 
-    className='border-y py-6'>
-      <div className=' container mx-auto'>
+    className='py-6'>
+      <div className=' container mx-auto border p-8'>
         <div className='flex flex-col items-center text-center' >
           <h2 className='section-titel 
           before:content-services relative

@@ -4,7 +4,7 @@ import Comment from './Comment'
 
 function Testimonials() {
   return (
-    <section id='testimonials' className='py-4 px-2 md:px-10 flex flex-col justify-center'>
+    <section id='testimonials' className='py-4 px-2 md:px-10 flex flex-col justify-center '>
       <div className=''>
         <div className='flex flex-col items-center text-center'>
           <h2 className='section-title 

@@ -48,7 +48,7 @@ const BlogPage = () =>{
              </div>
             {
             sec &&
-            <div onClick={()=> setSec(false)} className=' absolute z-30 px-4 md:pl-6 py-2 md:w-96 bg-slate-300' >
+            <div onClick={()=> setSec(false)} className=' absolute z-30 px-4 md:pl-6 py-2 md:w-96 bg-inherit' >
                 <p className=' font-black text-accent'>Security</p>
                 <p className='text-xs '>Security for protection of computer systems and networks from information disclosure, theft, damage or disruption by Analyzing possible attacks and monitoring suspicious activities </p>
              </div> 

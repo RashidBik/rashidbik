@@ -23,7 +23,7 @@ function Contact() {
   <>
     <div>
        <ToastContainer />
-    <section className='py-8 border-b' 
+    <section className='py-8 ' 
     id='contact'>
       <div className='container mx-auto' >
         <div className='flex flex-col items-center text-center' >
@@ -45,8 +45,8 @@ Contact Me
               const {icon, title, subtitle, description } = item;
               return (
                 <div className='flex flex-col lg:flex-row gap-x-4' key={index}> 
-                 <div className='rounded-sm w-14 h-14 flex items-start
-                justify-center mt-2 mb-4 lg:mb-0 text-2xl'>{icon} 
+                 <div className='rounded-sm w-14 p-4 flex items-start
+                justify-center text-2xl'>{icon} 
                 </div>
                 <div className=''>
                    <h4 className='font-body text-xl mb-1'>{title}</h4>
@@ -76,7 +76,7 @@ Contact Me
                   className='h-[60px] 
                   border border-gray-400
                   outline-none pl-6 w-full font-body text-[20px] 
-                  rounded-sm focus:outline focus:outline-1 
+                  rounded-xl focus:outline focus:outline-1 bg-inherit
                   focus:outline-accent '
                   />
                 <input 
@@ -85,23 +85,23 @@ Contact Me
                   placeholder='Your Email' 
                   className='border border-gray-400 h-[60px] 
                   outline-none pl-6 w-full font-body text-[20px] 
-                  rounded-sm focus:outline focus:outline-1 
+                  rounded-xl focus:outline focus:outline-1  bg-inherit
                   focus:outline-accent'
                   />
               </div>
               <textarea 
                  name='message'
-                 className='border border-gray-400 resize-none w-full
-                 outline-none p-6 rounded-sm h-[200px] 
-                 focus:outline focus:outline-1 
+                 className='border border-gray-400 resize-none w-full rounded-xl
+                 outline-none p-6 h-[200px] 
+                 focus:outline focus:outline-1  bg-inherit
                  focus:outline-accent text-[22px]' 
                  placeholder='your message'>
               </textarea> 
               <button 
                 type='submit'
-                className='py-4 px-7 font-medium 
+                className='py-4 px-7 font-medium border rounded-xl bg-inherit
                 flex items-center justify-center 
-                rounded-sm transition-all 
+                transition-all 
                 btn-lg '>
                 Send message
               </button>

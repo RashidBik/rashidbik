@@ -6,10 +6,10 @@
 
   .iconbefore {
     @apply h-10 w-10 
-    bg-slate-300 
+    bg-gray-500
     flex justify-center items-center 
     relative 
-          before:bg-slate-300 
+          before:bg-gray-500
           before:z-0 
           z-10 
           before:w-10 
@@ -17,9 +17,21 @@
           before:rotate-45;
   }
   .iconself {
-    @apply absolute text-2xl z-20 bg-slate-300 h-9 w-9 flex justify-center items-center;
+    @apply absolute text-2xl z-20 bg-inherit h-9 w-9 flex justify-center items-center;
   }
   .active {
+    @apply text-accent;
+  }
+  .light1 {
+    @apply text-accent;
+  }
+  .light2 {
+    @apply text-accent;
+  }
+  .dark1 {
+    @apply text-accent;
+  }
+  .dark2 {
     @apply text-accent;
   }
 }

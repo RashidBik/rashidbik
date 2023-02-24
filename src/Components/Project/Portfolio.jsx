@@ -24,7 +24,7 @@ const Portfolio = () => {
         <div className=' '>
           {
             vis ? (
-             <div className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-90 hover:bg-orange-50 p-4 duration-300 rounded-lg'>
+             <div className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-90 hover:border border-inherit p-4 duration-300 rounded-lg'>
                <Projects />
              </div>
             ): (

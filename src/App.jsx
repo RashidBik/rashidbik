@@ -18,7 +18,13 @@ import ErrorBoundry from './ErrorBoundry';
 
 function App() {
  const [show, setShow] = useState(false);
- const [isLoad, setIsLoad] = useState(false);
+  const [isLoad, setIsLoad] = useState(false);
+  const [dark, setDark] = useState(false);
+  
+  const handlDark = () =>
+  {
+    setDark(!dark)
+  }
  useEffect(() => {
   setTimeout(() => {
     setIsLoad(true)
@@ -28,8 +34,9 @@ function App() {
    <AnimatePresence >
       {!isLoad ? <Loader />
       :(       
-     <div className="scroll-smooth hover:scroll-auto">
-         <Show show={show} setShow={setShow} />
+     <div className="scroll-smooth hover:scroll-auto" style={dark ? { background: 'black', color: 'white' }:{ background: 'white', color: 'black' }}>
+            <div onClick={handlDark} className='fixed z-40 bg-red-600 px-2 -translate-x-5 top-80 rotate-90 font-bold'> #{dark ? 'Light':'Dark'}</div>
+        <Show show={ show } setShow={ setShow } />
          <ErrorBoundry><Header/></ErrorBoundry>
          <ErrorBoundry><Home setShow={setShow} /></ErrorBoundry>
          <ErrorBoundry><Brands /></ErrorBoundry>
@@ -40,7 +47,8 @@ function App() {
          <ErrorBoundry><Testimonials /></ErrorBoundry>
          <ErrorBoundry><Contact /></ErrorBoundry>
          <ErrorBoundry><Footer /></ErrorBoundry>
-         <ErrorBoundry><BacKTotop /></ErrorBoundry>
+        <ErrorBoundry><BacKTotop /></ErrorBoundry>
+        
      </div>
        ) 
        }

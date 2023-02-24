@@ -40,7 +40,7 @@ const Projects = () => {
 
                     }}
                     className={`${active === index ? 'active' : ''}
-                    cursor-pointer capitalize m-4 hover:text-gray-800`}
+                    cursor-pointer capitalize m-4 hover:text-gray-700`}
                     key={index} >{item.name}</li>
                 )
             })}
