@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
+import Carton from './Carton';
 
 const Register = ({ handlauth }) =>
 {
@@ -52,20 +53,28 @@ const Register = ({ handlauth }) =>
       animate='visible'
       exit='exit'
       className='bg-white m-auto w-[500px] h-[600px] rounded-xl '>
-        <p className='text-center py-6'>
-            <h1 className='text-3xl m-4 mb-6 font-black'>Wellcome Dear</h1>
-          <form onSubmit={handlSubmit}>
-            <div className=' bg-red-500'>
-                <input type="text"  ref={name} placeholder='Your Name' required="true" />
+        <div>
+                              <h1 className='text-3xl m-4 mb-6 font-black'>Wellcome Dear</h1>
+                              <div>
+                                  <Carton />
+                              </div>
+            <div className='border p-4 bg-green-600  '>
+                 <form onSubmit={handlSubmit}>
+                                      <div className='flex flex-col  py-2 px-16 rounded-xl'>
+                                          <p className='text-left'>Name <span className='text-red-600'>*</span></p>
+                <input className='p-2 rounded-lg' type="text"  ref={name} placeholder='Your Name' required="true" />
             </div>
-            <div className=' bg-yellow-400'>
-               <input type="email"  ref={email}  placeholder='Your Email' />
+                                      <div className='flex flex-col  py-2 px-16 rounded-xl'>
+                                          <p className='text-left'>Email</p>
+               <input className='p-2 rounded-lg' type="email"  ref={email}  placeholder='Your Email' />
             </div>
             <input
-                className=' hover:border border-red-300 text-gray-50 py-1 px-4 rounded-lg bg-red-500 '
+                className=' p-4 hover:border border-red-300 text-gray-50 py-1 px-4 rounded-lg bg-red-500 '
                 type="submit" value='Join' />
-          </form>
-        </p>
+          </form>                  
+        </div>     
+         
+        </div>
     </motion.div>
 
       </motion.div>
