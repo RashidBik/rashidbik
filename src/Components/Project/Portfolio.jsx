@@ -15,7 +15,7 @@ const Portfolio = () => {
           before:hidden before:lg:block text-3xl font-black 
           font-lobster
           transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300 
-          '>My Latest Work
+          '>My Latest Work ^
           </h2>
         <p>
 
@@ -29,7 +29,7 @@ const Portfolio = () => {
              </div>
             ): (
               <div className='text-center p-3 '>
-                  I always try to develop fully feature app with high perfermance
+                  I always try to develop fully feature app with high perfermance   ####
               </div>
             )
           }

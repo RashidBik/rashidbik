@@ -4,7 +4,7 @@ import {socialIcon} from '../data'
 
 const Footer = () => {
   return (
-    <footer className='py-12'>
+    <footer className='py-4'>
       <div className='container mx-auto'>
         <div className='flex flex-col
             space-y-6 lg:space-y-0 items-center justify-between'>
@@ -12,12 +12,12 @@ const Footer = () => {
                 {socialIcon.map((item, index) => {
                     const {href, icon} = item;
                     return(
-                        <a className='m-4 text-base'
+                        <a className=' text-base mx-4'
                         href={href} key={index} > {icon}</a>
                     )
                 })}
             </div>
-            <div className='lg:m-4 font-black text-3xl font-[cursive]'>
+            <div className='font-black font-[cursive]'>
             <img src="src/assets/img/rashidbik.svg"
                 className='w-[90px]'
           />            </div>

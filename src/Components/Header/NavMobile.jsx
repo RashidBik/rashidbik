@@ -35,9 +35,12 @@ function NavMobile() {
   };
 
   return (
-    <nav className='relative'>
-      <div onClick={() => setIsOpen(true)} 
-           className='cursor-pointer ' >
+    <nav className='relative'
+      onClickCapture={ () => setIsOpen(false) }
+        >
+      <div onClick={ () => setIsOpen(true) } 
+        className='cursor-pointer ' >
+        {/* ////////////menu Icon////////////// */}
           <svg 
           xmlns="http://www.w3.org/2000/svg" 
                className="h-7 w-7 " viewBox="0 0 20 20" 
@@ -51,8 +54,9 @@ function NavMobile() {
       <motion.div 
         variants={circleVariants}
         initial='hidden' 
-        animate={isOpen ? 'visible' : 'hidden'}
-        className='w-4 h-4 rounded-full hover:bg-accent-hover  fixed top-0 right-0'>
+        animate={ isOpen ? 'visible' : 'hidden' }
+    
+        className='w-4 h-4 rounded-full bg-gray-900 opacity-70 hover:bg-accent-hover  fixed top-0 right-0'>
       </motion.div>
 
       <motion.ul 
@@ -62,32 +66,17 @@ function NavMobile() {
         className={`${isOpen ? 'right-0' : '-right-full'} fixed top-0 bottom-0 w-full 
         flex flex-col justify-center items-center 
         transation-all duration-300 overflow-hidden`}>
-        <div onClick={() => {
-          setIsOpen(false)
-        }}
-        className='cursor-pointer absolute top-2 right-8'>
-          <svg xmlns="http://www.w3.org/2000/svg" 
-            className="h-6 w-6 " 
-            fill="none" 
-            viewBox="0 0 24 24" 
-            stroke="currentColor" 
-            strokeWidth={2}>
-             <path strokeLinecap="round" 
-               strokeLinejoin="round" 
-              d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
-         </svg>
-        </div>
       {
         navigation.map((item, index) => {
           return (
-            <li key={index} className='mb-8'>
+            <li key={index} className='mb-8 '>
               <Link 
                  to={item.href}
                  smooth={true}
                  duration={1000}
                  offset={-70}
                  onClick={() => {setIsOpen(false)}}
-                 className='text-xl cursor-pointer capitalize hover:text-gray-300'>
+                 className='text-xl cursor-pointer capitalize hover:text-accent'>
                 {item.name}
              </Link>
             </li>

@@ -264,7 +264,7 @@ export const contact = [
     icon: <RiMailFill />,
     title: 'Have a question?',
     subtitle: 'I am here to help you.',
-    description: 'Email me at abdurashid.bigzad1999@gmil.com',
+    description: 'Email me at abdurashid.bigzad1999@gmail.com',
   },
   {
     icon: <RiMapPinFill />,

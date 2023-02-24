@@ -36,7 +36,7 @@ function Home({setShow}) {
             animate="visible"
             className='lg:text-3xl lg:mt-20 mb-8 lg:mb-2 
             font-[cursive] '>
-              {/* Hey I Am Rashid Bik */}
+             
             </motion.div>
             <motion.h3 
             initial={{rotate: -2}}

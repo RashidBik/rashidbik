@@ -23,7 +23,7 @@ function Contact() {
   <>
     <div>
        <ToastContainer />
-    <section className='py-12 lg:py-12 border-b' 
+    <section className='py-8 border-b' 
     id='contact'>
       <div className='container mx-auto' >
         <div className='flex flex-col items-center text-center' >

@@ -13,7 +13,7 @@ function About() {
     <>
     <section className='py-2' id='about'>
         <div className='border flex flex-col justify-center items-center '>
-      <div className=' flex justify-between p-2 w-full md:p-12 md:text-2xl '>
+      <div className=' flex justify-between p-2 w-full md:p-12 md:text-2xl bg-red-400 '>
         <span className='h-16 w-16 bg-contain bg-no-repeat' style={{backgroundImage: `url(${logo})`}}></span>
         <div className='flex flex-col text-center pt-4 pb-6'>
           <p>Hi, I’m RashidBik</p>
@@ -38,11 +38,11 @@ function About() {
               <span>$</span>
               <p>Rashid Bik</p>
               <span onClick={()=> setLike(true)}>
-                <LineChart />
+                <AiOutlineHeart />
               </span>
             </div>
             <div className='p-2 md:text-2xl md:p-8'>
-              <div>
+              <div className='text-xs'>
                   I don’t like to define myself by the work I’ve done.
                   I define myself by the work I want to do. Skills can be taught, 
                   personality is inherent. I prefer to keep learning, continue 
