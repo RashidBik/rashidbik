@@ -34,7 +34,7 @@ function App() {
    <AnimatePresence >
       {!isLoad ? <Loader />
       :(       
-     <div className="scroll-smooth hover:scroll-auto" style={dark ? { background: 'black', color: 'white' }:{ background: 'white', color: 'black' }}>
+     <div className="scroll-smooth hover:scroll-auto" style={dark ? { background: '#21212c', color: 'white', borderColor: 'white' }:{ background: '#f4dfdf', color: 'black', borderColor: 'black' }}>
             <div onClick={handlDark} className='fixed z-40 bg-red-600 px-2 -translate-x-5 top-80 rotate-90 font-bold'> #{dark ? 'Light':'Dark'}</div>
         <Show show={ show } setShow={ setShow } />
          <ErrorBoundry><Header/></ErrorBoundry>
