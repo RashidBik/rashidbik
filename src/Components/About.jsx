@@ -13,14 +13,23 @@ function About() {
     <>
     <section className='pb-8' id='about'>
         <div className=' flex flex-col justify-center items-center '>
-      <div className=' flex justify-between p-2 w-full md:p-12 md:text-2xl bg-inherit border-b border-gray-500 shadow shadow-gray-500 '>
-        <span className='h-16 w-16 bg-contain bg-no-repeat' style={{backgroundImage: `url(${logo})`}}></span>
+      {/* ///////////////////////////////////// */}
+          <div className=' relative flex justify-start z-0 w-full md:text-2xl bg-inherit border-b shadow shadow-gray-500 md:px-4'>
+            {/* <span className='h-56 w-56  border bg-cover bg-no-repeat' style={ { backgroundImage: `url(${ logo })` } }></span> */}
+            <img className='h-10 md:h-40 md:pl-8' src={logo} alt="" />
         <div className='flex flex-col text-center pt-4 pb-6'>
           <p>Hi, I’m RashidBik</p>
-          <p className=' text-xl font-black font-lobster'>I build and develop digital products</p>
+          <p className=' text-xl font-black md:m-8 font-lobster'>I build and develop digital products</p>
         </div>
-        <span className='hidden md:flex bg-[url()]'>logo</span>
-        {/* <img src="../assets/img/RB_PNG.png" alt="" /> */}
+            <div className=' absolute w-40 md:w-80 lg:w-96 h-full right-0 '>
+              <div className='relative '>
+                <div className='lg:w-[51%] md:w-[61%] w-[69%] opacity-40 hover:animate-pulse h-16 md:h-20 absolute top-[14px] md:top-[42px] right-8 -rotate-[60deg] skew-x-[30deg] rounded bg-red-800 border-y flex justify-center pt-4'>
+                  <p className='text-xl -skew-x-[30deg] md:text-4xl'>logo</p>
+                </div>
+              </div>
+            </div>
+      
+        {/* ///////////////////////// */}
       </div>
      <div className=' rounded-full border -translate-y-10 md:-translate-y-16   '>
       <div className='border shadow shadow-gray-500 rounded-full h-20 w-20 md:h-60 md:w-60 bg-cover ' style={{backgroundImage: `url(${image})`}}></div>
@@ -32,7 +41,7 @@ function About() {
     {/* //////////// */}
     <div className='grid md:grid-cols-2 md:px-16 md:py-8'>
     
-      <div className=' px-6 md:px-40 '>
+      <div className=' px-6 md:px-4 xl:px-40 '>
           <div className='border md:py-6 text-center shadow-md shadow-orange-500 rounded-md'>
             <div className='flex justify-between p-4 border-b border-slate-300 text-xl rounded-md md:text-2xl'>
               <span>$</span>

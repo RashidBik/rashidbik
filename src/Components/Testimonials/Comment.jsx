@@ -3,6 +3,7 @@ import {AiOutlineArrowRight} from 'react-icons/ai'
 import Register from '../../auth/Register';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { TypeAnimation } from 'react-type-animation';
 
 const commentsStore = [
   {name: 'Some One', img: '', msg: 'hey you are the best', repl: {name: "rashid", msg: 'Thank You so muuuuch'}}
@@ -14,6 +15,26 @@ const Comment = () =>{
   const [comments, setComments] = useState(commentsStore);
   const [propname, setPropname] = useState('');
   const commentRef = useRef();
+
+  // useEffect(() => {
+  //   fetch('http://localhost/somewhrer')
+  //     .then(res => res.json())
+  //     .then(result => console.log(result))
+  //     .catch(err => console.log(err));
+ 
+  // }, []);
+
+  const postComment = (e) =>
+  {
+    e.preventDefault();
+    fetch({
+      url: 'http://localhost/somehow',
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then(res => res.json()).then(result => console.log(result)).catch(err => console.log(err));
+  }
   
   const handlauth = (props) =>
   {
@@ -40,9 +61,9 @@ const Comment = () =>{
                {
         auth ? (
             <form onSubmit={addComment}>
-              <div className='p-4'>
-                  <textarea className='w-full h-11 rounded-xl p-4' type="text" ref={commentRef} placeholder='write your comment here' required/>  
-                  <input type="submit" value="Add" className=' hover:border border-red-300 text-gray-50 py-1 px-4 rounded-lg bg-red-500 mt-4'/>
+              <div className='px-20 py-8 flex'>
+                  <textarea className='w-full h-11 rounded-xl p-4 bg-inherit outline-none hover:placeholder:text-lg ' type="text" ref={commentRef} placeholder='write your comment here...' required/>  
+                  <input type="submit" value="Add" className=' hover:border border-red-300 py-1 px-4 rounded-lg bg-red-500 mt-4'/>
               </div>
             </form>
             ): (
@@ -55,8 +76,18 @@ const Comment = () =>{
       ): (
            <div className='w-full flex py-4'>
               <button onClick={()=> setComment(true)}
-                className=' hover:border border-red-300 text-gray-50 py-2 px-4 rounded-lg bg-red-500 '>write comment</button>
-              <input className='mx-2 border-l border-red-500 px-4 bg-inherit' type="text" disabled="true" placeholder='write your comment...' />
+                className=' hover:border border-red-300 text-gray-50 py-2 px-4 rounded-lg bg-red-500 hover:animate-pulse'>write comment</button>
+                 <TypeAnimation
+                sequence={[
+                  'Write your comment...',
+                  1000 
+                ]}
+                wrapper="div"
+                cursor={true}
+                repeat={1}
+                style={{ fontSize: '1em' }}
+                className="mx-2 border-l border-red-500 px-4 bg-inherit pt-2 opacity-50"
+              />
             </div> 
       )}
       <div>

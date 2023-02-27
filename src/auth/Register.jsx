@@ -4,7 +4,11 @@ import Carton from './Carton';
 
 const Register = ({ handlauth }) =>
 {
-    const [show, setShow] = useState(true);
+  const [show, setShow] = useState(true);
+  const [isName, setIsName] = useState('');
+  const [isEmail, setIsEmail] = useState('');
+  const [bg, setBg] = useState('red');
+  const [happy, setHappy] = useState(false);
     const name = useRef();
     const email = useRef();
 
@@ -36,7 +40,27 @@ const Register = ({ handlauth }) =>
         }
     }
     }
-
+    
+  const handleName = (e) =>
+  {
+    e.preventDefault();
+    setBg('red')
+    setIsName(e.target.value)
+    if (isName.length > 1) {
+      setBg('green')
+    }
+  }
+const handleEmail = (e) =>
+  {
+    e.preventDefault();
+   
+  setIsEmail(e.target.value)
+ 
+    if (isEmail.includes(`@` && '.')) {
+      setHappy(true)
+    }
+  
+}
   return (
     <>
      <AnimatePresence>
@@ -45,34 +69,36 @@ const Register = ({ handlauth }) =>
       variants={showModalVariants}
       initial='hidden'
       animate='visible'
-      className='fixed top-0 left-0 w-[100%] h-[100%] !opacity-90 bg-accent z-30'
+      className='fixed top-0 left-0 w-[100%] h-[100%]  bg-gray-800 z-30'
       >
     <motion.div
       variants={popUpVariants}
       initial='hidden'
       animate='visible'
       exit='exit'
-      className='bg-white m-auto w-[500px] h-[600px] rounded-xl '>
+      className=' bg-blue-300 m-auto w-[500px] h-[600px] rounded-xl '>
         <div>
-                              <h1 className='text-3xl m-4 mb-6 font-black'>Wellcome Dear</h1>
-                              <div>
-                                  <Carton />
-                              </div>
-            <div className='border p-4 bg-green-600  '>
+          <div>
+              <Carton />
+          </div>
+            <div className='p-4 '>
                  <form onSubmit={handlSubmit}>
                                       <div className='flex flex-col  py-2 px-16 rounded-xl'>
                                           <p className='text-left'>Name <span className='text-red-600'>*</span></p>
-                <input className='p-2 rounded-lg' type="text"  ref={name} placeholder='Your Name' required="true" />
+                <input className='p-2 rounded-lg' type="text"  ref={name} placeholder='Your Name' value={isName} onChange={handleName} required="true" />
             </div>
                                       <div className='flex flex-col  py-2 px-16 rounded-xl'>
                                           <p className='text-left'>Email</p>
-               <input className='p-2 rounded-lg' type="email"  ref={email}  placeholder='Your Email' />
+               <input className='p-2 rounded-lg' type="email"  ref={email}  placeholder='Your Email' value={isEmail} onChange={handleEmail}  />
             </div>
-            <input
-                className=' p-4 hover:border border-red-300 text-gray-50 py-1 px-4 rounded-lg bg-red-500 '
+                    <div className='py-8'>
+                       <input
+                className='text-lg text-gray-50 py-1 px-12 hover:animate-pulse rounded-lg border transition-all ' style={{background: `${bg}`}}
                 type="submit" value='Join' />
-          </form>                  
-        </div>     
+           </div>
+                  </form>   
+                  { happy ? <img className='h-80 ' src="src/assets/Madge-Waving.gif" alt="" />: '' }
+                </div>     
          
         </div>
     </motion.div>

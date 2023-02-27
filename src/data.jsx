@@ -1,4 +1,3 @@
-
 //  icons
 import {
   RiGithubFill,
@@ -232,7 +231,6 @@ export const skills = [
   },
 ];
 
-
 // testimonials
 export const testimonials = [
   {
@@ -273,3 +271,4 @@ export const contact = [
     description: 'Serving clients worldwide',
   },
 ];
+

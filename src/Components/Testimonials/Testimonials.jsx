@@ -21,7 +21,12 @@ function Testimonials() {
              <Comment />
           </div>
         </div>
+        <div className='flex border bg-blue-200 shadow-md '>
+          <div className='relative w-96 md:w-[600px] lg:w-[800px] md:p-4 lg:px-11'>
+              <img className=' absolute bottom-0 ' src="src/assets/Madge-with-hearts.gif" alt="" />
+          </div>
         <TestimonialSlider />
+        </div>
       </div>
     </section>
   )

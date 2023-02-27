@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { TypeAnimation } from 'react-type-animation';
 import Projects from './Projects'
 
 
@@ -15,9 +16,11 @@ const Portfolio = () => {
           before:hidden before:lg:block text-3xl font-black 
           font-lobster
           transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300 
-          '><h1 className='p-12'>My Latest Work ^</h1>
-            <div className='border  w-[600px] h-[300px] opacity-50 p-2 bg-[url("src/assets/img/wallpaper.jpg")] '>
-               <h6 className='text-sm pt-36 cursor-pointer '>Click To See Them </h6>
+          '><h1 className='p-12'>My Latest Work </h1>
+            <div className='border  md:w-[600px] md:h-[300px] opacity-50 p-2 bg-[url("src/assets/img/wallpaper.jpg")] flex justify-center items-center'>
+              <img className='h-20 hover:h-[69px] hover:animate-pulse ' src="src/assets/purplearrowright.gif" alt="" />
+               <h6 className='text-sm  cursor-pointer '>Click To See Some
+              </h6>
             </div>
           </div>
         <p>
@@ -32,18 +35,28 @@ const Portfolio = () => {
              </div>
             ): (
               <div className='text-center p-4 flex flex-col justify-center align-middle items-center '>
-                  <p>I always try to develop fully feature app with high perfermance</p>
+                <TypeAnimation
+                sequence={[
+                  'I always try to develop fully feature app with high perfermance',
+                  1000 
+                ]}
+                wrapper="div"
+                cursor={true}
+                repeat={Infinity}
+                style={{ fontSize: '1em' }}
+                className="pt-2"
+                  />
                   <div className='relative flex'>
-                  <div className='border-b hover:-rotate-6 hover:animate-ping duration-75 rotate-6 opacity-50 border-gray-500 rounded-full before:border-t before:border-inherit before:absolute before:top-10 before:rounded-xl before:w-20 before:h-20 w-20 h-10 '></div>
-                  <div className='border-b hover:-rotate-6 hover:animate-ping duration-75 rotate-6 opacity-50 border-gray-500 rounded-full before:border-t before:border-inherit before:absolute before:top-10 before:rounded-xl before:w-20 before:h-20 w-20 h-10 '></div>
-                  <div className='border-b hover:-rotate-6 hover:animate-ping duration-75 rotate-6 opacity-50 border-gray-500 rounded-full before:border-t before:border-inherit before:absolute before:top-10 before:rounded-xl before:w-20 before:h-20 w-20 h-10 '></div>
-                  <div className='border-b hover:-rotate-6 hover:animate-ping duration-75 rotate-6 opacity-50 border-gray-500 rounded-full before:border-t before:border-inherit before:absolute before:top-10 before:rounded-xl before:w-20 before:h-20 w-20 h-10 '></div>
-                  <div className='border-b hover:-rotate-6 hover:animate-ping duration-75 rotate-6 opacity-50 border-gray-500 rounded-full before:border-t before:border-inherit before:absolute before:top-10 before:rounded-xl before:w-20 before:h-20 w-20 h-10 '></div>
-                  <div className='border-b hover:-rotate-6 hover:animate-ping duration-75 rotate-6 opacity-50 border-gray-500 rounded-full before:border-t before:border-inherit before:absolute before:top-10 before:rounded-xl before:w-20 before:h-20 w-20 h-10 '></div>
-                  <div className='border-b hover:-rotate-6 hover:animate-ping duration-75 rotate-6 opacity-50 border-gray-500 rounded-full before:border-t before:border-inherit before:absolute before:top-10 before:rounded-xl before:w-20 before:h-20 w-20 h-10 '></div>
-                  <div className='border-b hover:-rotate-6 hover:animate-ping duration-75 rotate-6 opacity-50 border-gray-500 rounded-full before:border-t before:border-inherit before:absolute before:top-10 before:rounded-xl before:w-20 before:h-20 w-20 h-10 '></div>
-                  <div className='border-b hover:-rotate-6 hover:animate-ping duration-75 rotate-6 opacity-50 border-gray-500 rounded-full before:border-t before:border-inherit before:absolute before:top-10 before:rounded-xl before:w-20 before:h-20 w-20 h-10 '></div>
-                  <div className='border-b hover:-rotate-6 hover:animate-ping duration-75 rotate-6 opacity-50 border-gray-500 rounded-full w-20 h-10 '></div>
+                  <div className='border-b hover:-rotate-6 hover:animate-ping duration-75 rotate-6 opacity-50 border-gray-500 rounded-full before:border-t before:border-inherit before:absolute before:top-10 before:rounded-xl md:before:w-20 md:before:h-20 md:w-20 md:h-10 before:w-10 before:h-10 w-10 h-10 '></div>
+                  <div className='border-b hover:-rotate-6 hover:animate-ping duration-75 rotate-6 opacity-50 border-gray-500 rounded-full before:border-t before:border-inherit before:absolute before:top-10 before:rounded-xl md:before:w-20 md:before:h-20 md:w-20 md:h-10 before:w-10 before:h-10 w-10 h-10 '></div>
+                  <div className='border-b hover:-rotate-6 hover:animate-ping duration-75 rotate-6 opacity-50 border-gray-500 rounded-full before:border-t before:border-inherit before:absolute before:top-10 before:rounded-xl md:before:w-20 md:before:h-20 md:w-20 md:h-10 before:w-10 before:h-10 w-10 h-10 '></div>
+                  <div className='border-b hover:-rotate-6 hover:animate-ping duration-75 rotate-6 opacity-50 border-gray-500 rounded-full before:border-t before:border-inherit before:absolute before:top-10 before:rounded-xl md:before:w-20 md:before:h-20 md:w-20 md:h-10 before:w-10 before:h-10 w-10 h-10 '></div>
+                  <div className='border-b hover:-rotate-6 hover:animate-ping duration-75 rotate-6 opacity-50 border-gray-500 rounded-full before:border-t before:border-inherit before:absolute before:top-10 before:rounded-xl md:before:w-20 md:before:h-20 md:w-20 md:h-10 before:w-10 before:h-10 w-10 h-10 '></div>
+                  <div className='border-b hover:-rotate-6 hover:animate-ping duration-75 rotate-6 opacity-50 border-gray-500 rounded-full before:border-t before:border-inherit before:absolute before:top-10 before:rounded-xl md:before:w-20 md:before:h-20 md:w-20 md:h-10 before:w-10 before:h-10 w-10 h-10 '></div>
+                  <div className='border-b hover:-rotate-6 hover:animate-ping duration-75 rotate-6 opacity-50 border-gray-500 rounded-full before:border-t before:border-inherit before:absolute before:top-10 before:rounded-xl md:before:w-20 md:before:h-20 md:w-20 md:h-10 before:w-10 before:h-10 w-10 h-10 '></div>
+                  <div className='border-b hover:-rotate-6 hover:animate-ping duration-75 rotate-6 opacity-50 border-gray-500 rounded-full before:border-t before:border-inherit before:absolute before:top-10 before:rounded-xl md:before:w-20 md:before:h-20 md:w-20 md:h-10 before:w-10 before:h-10 w-10 h-10 '></div>
+                  <div className='border-b hover:-rotate-6 hover:animate-ping duration-75 rotate-6 opacity-50 border-gray-500 rounded-full before:border-t before:border-inherit before:absolute before:top-10 before:rounded-xl md:before:w-20 md:before:h-20 md:w-20 md:h-10 before:w-10 before:h-10 w-10 h-10 '></div>
+                  {/* <div className='border-b hover:-rotate-6 hover:animate-ping duration-75 rotate-6 opacity-50 border-gray-500 rounded-full w-10 h-10 md:w-20 md:h-20 '></div> */}
 </div>
                 </div>
             )

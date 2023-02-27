@@ -20,22 +20,23 @@ const TestimonialSlider = () => {
                stopOnLastSlide:false
            }}
            slidesPerView={1}
-           className='mySwiper flex justify-center'
+           className='mySwiper'
           >  
          {testimonials.map((item, index) => {
             const {authorImg, authorText, authorName, authorPosition} = item;
             return (
                <SwiperSlide key={index} >
-                <div className=' border-t pt-6 bg-red-800'>
-                  <div className='h-40 !bg-cover bg-blend-overlay  !bg-center !bg-no-repeat  ' style={ { background: `url(${ authorImg })` } }  >  
-                   <div className='text-center pt-6 '>
+                <div className='p-4 md:py-11 lg:py-20 px-20'>
+                  <div className=''>  
+                    {/* style={ { background: `url(${ authorImg })` } } */}
+                   <div className=' '>
                      <div className=''>
                         <p className='font-bold'>{authorName}</p>
                         <p className=''>{authorPosition}</p>
                       </div>
-                      <h5 className='font-body italic font-normal' >
+                      <h5 className=' text-xs md:text-lg lg:text-xl' >
                         { authorText }
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam asperiores iusto et molestiae aut qui impedit, non aliquam itaque praesentium illo nesciunt quaerat omnis assumenda repudiandae doloremque iure reprehenderit officiis.
+                        Lorem ipsum, dolor sit nesciunt quaerat omnis assumenda repudiandae doloremque iure reprehenderit officiis.
                       </h5>
                     </div>
                  </div>
