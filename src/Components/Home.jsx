@@ -42,7 +42,7 @@ function Home({setShow}) {
             initial={{rotate: -2}}
             whileTap={{rotate: 2}}
             transition={{type: 'spring', stiffness: 400}}
-            className='leading-[44px] md:leading-tight lg:text-8xl text-6xl 
+            className='leading-[44px] md:leading-tight lg:text-8xl text-6xl text-center
             lg:leading-[1.2] font-madi font-bold md:tracking-[-2px] mix-blend-difference text-white'>
                FullStack <br /> Web Developer</motion.h3>
             <div className='pb-4 lg:pb-2 lg:pt-0 md: pt-6 md:pb-12 max-w-[480px] lg:text-lg font-madi
@@ -50,24 +50,24 @@ function Home({setShow}) {
               I
             <TypeAnimation
                 sequence={[
-                  'Love React And Tailwind',
+                  'Love Coding',
                   1000,             
-                  'Work With React And Tainlwind', 
+                  'Use Sveltekit and React', 
                   2000, 
-                  'Enjoy React With Tailwind', 
+                    'Enjoy my life', 
+                  3000,
                 ]}
                 wrapper="div"
                 cursor={true}
                 repeat={Infinity}
                 style={{ fontSize: '2em' }}
-                className=""
+                className="bg-[#a1634bab]"
               />
             </div>
-            <div className='font-madi'>You</div>
             <motion.button className='py-4 mt-2 px-7 sm:mb-6 font-medium 
             flex items-center justify-center 
             rounded-sm transition-all h-[48px]
-            hover:bg-accent-hover md:btn-lg
+            hover:bg-accent-hover bg-[#a1634bab] md:btn-lg
             transation-all font-lobster'
             initial={{scale: 1.9}}
             animate={{scale: 1.1}}
