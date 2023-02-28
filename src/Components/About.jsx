@@ -1,13 +1,21 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import image from '../assets/img/rashid2.jpg';
 import logo from '../assets/img/rashidbik.svg';
 import LineChart from './about/LineChart';
 import { AiOutlineHeart } from "react-icons/ai"
+import Like from './about/Like';
+import { store } from '../store';
 
+
+
+  
 function About() {
-  const [like, setLike] = useState(false);
-  const [likeNum, setLikeNum] = useState(10);
-
+  const [likeNum, setLikeNum] = useState(0);
+  const updateLike = () =>
+  {
+      let num = store.filter(l => l.liked)
+      setLikeNum(num.length)
+}
 
   return (
     <>
@@ -46,9 +54,7 @@ function About() {
             <div className='flex justify-between p-4 border-b border-slate-300 text-xl rounded-md md:text-2xl'>
               <span>$</span>
               <p>Rashid Bik</p>
-              <span onClick={()=> setLike(true)}>
-                <AiOutlineHeart />
-              </span>
+                  <Like updateLike={ updateLike}  />
             </div>
             <div className='p-2 md:text-2xl md:p-8'>
               <div className='text-xs md:text-xl py-4'>

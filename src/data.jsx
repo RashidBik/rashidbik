@@ -39,12 +39,6 @@ import SkillImg12 from './assets/img/skills/figma.png';
 import SkillImg13 from './assets/img/skills/linux.png';
 import SkillImg14 from './assets/img/skills/docker.png';
 
-// testimonial images
-import TestiImage1 from './assets/img/testimonials/testimonial-1.webp';
-import TestiImage2 from './assets/img/testimonials/testimonial-2.webp';
-import TestiImage3 from './assets/img/testimonials/testimonial-3.webp';
-import React from 'react';
-
 // navigation
 export const navigation = [
   {
@@ -234,21 +228,21 @@ export const skills = [
 // testimonials
 export const testimonials = [
   {
-    authorImg: TestiImage1,
+    authorImg: 'TestiImage1',
     authorText:
       '',
     authorName: 'Olivia Doe',
     authorPosition: 'Head of Design, Google',
   },
   {
-    authorImg: TestiImage2,
+    authorImg: 'TestiImage2',
     authorText:
       '',
     authorName: 'Olivia Doe',
     authorPosition: 'Head of Design, Google',
   },
   {
-    authorImg: TestiImage3,
+    authorImg: 'TestiImage3',
     authorText:
       '',
     authorName: 'Olivia Doe',
