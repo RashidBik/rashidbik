@@ -61,13 +61,13 @@ function Home({setShow}) {
                 cursor={true}
                 repeat={Infinity}
                 style={{ fontSize: '2em' }}
-                className="bg-[#a1634bab]"
+                className=" bg-gradient-to-tr from-[#a1634bab] to-[#1e7417ad]  "
               />
             </div>
             <motion.button className='py-4 mt-2 px-7 sm:mb-6 font-medium 
             flex items-center justify-center 
             rounded-sm transition-all h-[48px]
-            hover:bg-accent-hover bg-[#a1634bab] md:btn-lg
+            hover:bg-accent-hover bg-[#a1634bab] md:btn-lg 
             transation-all font-lobster'
             initial={{scale: 1.9}}
             animate={{scale: 1.1}}
