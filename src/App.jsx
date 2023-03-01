@@ -20,6 +20,7 @@ function App() {
  const [show, setShow] = useState(false);
   const [isLoad, setIsLoad] = useState(false);
   const [dark, setDark] = useState(false);
+  const [mobile, setMobile] = useState(false);
   
   const handlDark = () =>
   {
@@ -34,22 +35,24 @@ function App() {
    <AnimatePresence >
       {!isLoad ? <Loader />
       :(       
-     <div className="scroll-smooth hover:scroll-auto" style={dark ? { background: '#21212c', color: 'white', borderColor: 'white' }:{ background: '#f4dfdf', color: 'black', borderColor: 'black' }}>
-            <div onClick={handlDark} className='fixed z-40 bg-red-600 px-2 -translate-x-5 top-80 rotate-90 font-bold'> #{dark ? 'Light':'Dark'}</div>
-        <Show show={ show } setShow={ setShow } />
-         <ErrorBoundry><Header/></ErrorBoundry>
-         <ErrorBoundry><Home setShow={setShow} /></ErrorBoundry>
-         <ErrorBoundry><Brands /></ErrorBoundry>
-         <ErrorBoundry><About /></ErrorBoundry>
-         <ErrorBoundry><Skills /></ErrorBoundry>
-         <ErrorBoundry><Portfolio /></ErrorBoundry>
-         <ErrorBoundry><Services /></ErrorBoundry>
-         <ErrorBoundry><Testimonials /></ErrorBoundry>
-         <ErrorBoundry><Contact /></ErrorBoundry>
-         <ErrorBoundry><Footer /></ErrorBoundry>
-        <ErrorBoundry><BacKTotop /></ErrorBoundry>
-        
+        // <div style={ mobile ? { width: '420px', height:'700px', overflow: 'scroll'}: {}}>
+        <div className="scroll-smooth hover:scroll-auto " style={dark ? { background: '#21212c', color: 'white', borderColor: 'white' }:{ background: '#f4dfdf', color: 'black', borderColor: 'black' }}>
+        <div onClick={handlDark} className='fixed z-40 bg-red-600 px-2 -translate-x-5 top-80 rotate-90 font-bold'> #{dark ? 'Light':'Dark'}</div>
+         {/* <div onClick={()=> setMobile(!mobile)} className='hidden md:fixed md:block right-0 top-80 font-bold text-teal-50'>responsive</div> */}
+          <Show show={ show } setShow={ setShow } />
+          <ErrorBoundry><Header/></ErrorBoundry>
+          <ErrorBoundry><Home setShow={setShow} /></ErrorBoundry>
+          <ErrorBoundry><Brands /></ErrorBoundry>
+          <ErrorBoundry><About /></ErrorBoundry>
+          <ErrorBoundry><Skills /></ErrorBoundry>
+          <ErrorBoundry><Portfolio /></ErrorBoundry>
+          <ErrorBoundry><Services /></ErrorBoundry>
+          <ErrorBoundry><Testimonials /></ErrorBoundry>
+          <ErrorBoundry><Contact /></ErrorBoundry>
+          <ErrorBoundry><Footer /></ErrorBoundry>
+          <ErrorBoundry><BacKTotop /></ErrorBoundry>
      </div>
+        // </div>
        ) 
        }
    </AnimatePresence>
