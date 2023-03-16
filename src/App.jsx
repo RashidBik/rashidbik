@@ -14,14 +14,18 @@ import Show from './Show';
 import Loader from './Components/Loader';
 import { AnimatePresence } from 'framer-motion';
 import ErrorBoundry from './ErrorBoundry';
+import LoadingBar from 'react-top-loading-bar';
 
 
 function App() {
  const [show, setShow] = useState(false);
   const [isLoad, setIsLoad] = useState(false);
   const [dark, setDark] = useState(false);
-  const [mobile, setMobile] = useState(false);
-  
+  // const [mobile, setMobile] = useState(false);
+  ///////////////////////////////
+//  const [progress, setProgress] = useState(0)
+   
+/////////////////////////////////
   const handlDark = () =>
   {
     setDark(!dark)
@@ -29,16 +33,26 @@ function App() {
  useEffect(() => {
   setTimeout(() => {
     setIsLoad(true)
+    //  let bar = 0
+    //         onDownloadProgress(progressEvent){
+    //             bar = Math.round((progressEvent.loaded / progressEvent.total)*100)
+    //             setProgress(bar)
+    //         }
   }, 500);
  }, []);
   return (
    <AnimatePresence >
-      {!isLoad ? <Loader />
+      {!isLoad ? <LoadingBar
+        color='#f11946'
+        progress={progress}
+        onLoaderFinished={() => setProgress(0)}
+      />
       :(       
-        // <div style={ mobile ? { width: '420px', height:'700px', overflow: 'scroll'}: {}}>
+        // <div stylreade={ mobile ? { width: '420px', height:'700px', overflow: 'scroll'}: {}}>
         <div className="scroll-smooth hover:scroll-auto " style={dark ? { background: '#21212c', color: 'white', borderColor: 'white' }:{ background: '#f4dfdf', color: 'black', borderColor: 'black' }}>
         <div onClick={handlDark} className='fixed z-40 bg-red-600 px-2 -translate-x-5 top-80 rotate-90 font-bold'> #{dark ? 'Light':'Dark'}</div>
          {/* <div onClick={()=> setMobile(!mobile)} className='hidden md:fixed md:block right-0 top-80 font-bold text-teal-50'>responsive</div> */}
+         <LoadingBar>
           <Show show={ show } setShow={ setShow } />
           <ErrorBoundry><Header/></ErrorBoundry>
           <ErrorBoundry><Home setShow={setShow} /></ErrorBoundry>
@@ -51,6 +65,7 @@ function App() {
           <ErrorBoundry><Contact /></ErrorBoundry>
           <ErrorBoundry><Footer /></ErrorBoundry>
           <ErrorBoundry><BacKTotop /></ErrorBoundry>
+         </LoadingBar>
      </div>
         // </div>
        ) 
@@ -59,4 +74,4 @@ function App() {
   );
 }
 
-export default App;
+export default App;  
