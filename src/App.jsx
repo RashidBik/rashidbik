@@ -1,4 +1,9 @@
-import React,{useState,useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
+import LoadingBar from 'react-top-loading-bar'
+import { AnimatePresence } from 'framer-motion';
+import ErrorBoundry from './ErrorBoundry';
+import LoadingBar from 'react-top-loading-bar';
+
 import Home from './Components/Home';
 import About from './Components/About';
 import Contact from './Components/Contact';
@@ -11,10 +16,7 @@ import Skills from './Components/Skills';
 import Footer from './Components/Footer';
 import BacKTotop from './Components/BacKTotop';
 import Show from './Show';
-import Loader from './Components/Loader';
-import { AnimatePresence } from 'framer-motion';
-import ErrorBoundry from './ErrorBoundry';
-import LoadingBar from 'react-top-loading-bar';
+
 
 
 function App() {
@@ -38,15 +40,16 @@ function App() {
     //             bar = Math.round((progressEvent.loaded / progressEvent.total)*100)
     //             setProgress(bar)
     //         }
+    // <LoadingBar
+    //     color='#f11946'
+    //     progress={progress}
+    //     onLoaderFinished={() => setProgress(0)}
+    //   />
   }, 500);
  }, []);
   return (
    <AnimatePresence >
-      {!isLoad ? <LoadingBar
-        color='#f11946'
-        progress={progress}
-        onLoaderFinished={() => setProgress(0)}
-      />
+      {!isLoad ? <p>loading...</p>
       :(       
         // <div stylreade={ mobile ? { width: '420px', height:'700px', overflow: 'scroll'}: {}}>
         <div className="scroll-smooth hover:scroll-auto " style={dark ? { background: '#21212c', color: 'white', borderColor: 'white' }:{ background: '#f4dfdf', color: 'black', borderColor: 'black' }}>
@@ -75,3 +78,4 @@ function App() {
 }
 
 export default App;  
+

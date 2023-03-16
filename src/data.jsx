@@ -1,3 +1,55 @@
+// import { useEffect, useState } from 'react';
+
+// import { createClient } from "@supabase/supabase-js";
+
+// const API_URL="https://vwnvvsmjitnwqeexzhfz.supabase.co"
+// const API_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ3bnZ2c21qaXRud3FlZXh6aGZ6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2Nzg4ODk0MjQsImV4cCI6MTk5NDQ2NTQyNH0.cmCuiMpQghc_NzrxQp8T-Z3OJ0RSnUChsPFyIjrcvgs"
+// const supabse = createClient(API_URL, API_KEY);
+
+// export default function data(url)
+// {
+//   const [data, setData] = useState();
+//   const [error, setError] = useState();
+//   const [loading, setLoading] = useState(false);
+  
+//   useEffect(() => {
+//     async function fetchData(params)
+//     {
+//       setLoading(true);
+//       const { data, error } = await supabse.from('rashidbik').select();
+
+//       if (error) {
+//         setError(error)
+//         setData(null)
+//         setLoading(false)
+//       } else
+//       {
+//           setError(null)
+//         setData(data)
+//         setLoading(false)
+//       }
+//     }
+//   }, [input]);
+// return {data, error, loading}
+
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //  icons
 import {
   RiGithubFill,
@@ -265,4 +317,5 @@ export const contact = [
     description: 'Serving clients worldwide',
   },
 ];
+
 
