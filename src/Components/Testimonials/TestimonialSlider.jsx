@@ -1,5 +1,4 @@
 import React from 'react'
-import {testimonials} from '../../data'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import "swiper/css";
 import "swiper/css/pagination";
@@ -7,6 +6,33 @@ import "swiper/css/grid";
 import SwiperCore, {Pagination} from 'swiper';
 
 SwiperCore.use([Pagination]);
+
+const testimonials = [
+  {
+    authorImg: 'TestiImage1',
+    authorText:
+      '',
+    authorName: 'Olivia Doe',
+    authorPosition: 'Head of Design, Google',
+  },
+  {
+    authorImg: 'TestiImage2',
+    authorText:
+      '',
+    authorName: 'Olivia Doe',
+    authorPosition: 'Head of Design, Google',
+  },
+  {
+    authorImg: 'TestiImage3',
+    authorText:
+      '',
+    authorName: 'Olivia Doe',
+    authorPosition: 'Head of Design, Google',
+  },
+];
+
+
+
 
 const TestimonialSlider = () => {
   return (

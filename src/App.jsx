@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import LoadingBar from 'react-top-loading-bar'
 import { AnimatePresence } from 'framer-motion';
 import ErrorBoundry from './ErrorBoundry';
-import LoadingBar from 'react-top-loading-bar';
 
 import Home from './Components/Home';
 import About from './Components/About';
@@ -25,7 +24,7 @@ function App() {
   const [dark, setDark] = useState(false);
   // const [mobile, setMobile] = useState(false);
   ///////////////////////////////
-//  const [progress, setProgress] = useState(0)
+ const [progress, setProgress] = useState(0)
    
 /////////////////////////////////
   const handlDark = () =>
@@ -33,29 +32,31 @@ function App() {
     setDark(!dark)
   }
  useEffect(() => {
+   let bar = 0
   setTimeout(() => {
     setIsLoad(true)
-    //  let bar = 0
-    //         onDownloadProgress(progressEvent){
-    //             bar = Math.round((progressEvent.loaded / progressEvent.total)*100)
-    //             setProgress(bar)
-    //         }
-    // <LoadingBar
-    //     color='#f11946'
-    //     progress={progress}
-    //     onLoaderFinished={() => setProgress(0)}
-    //   />
+    // onDownloadProgress(progressEvent){
+        // bar = Math.round((progressEvent.loaded / progressEvent.total)*100)
+        setProgress(bar++ < 100)
+        
+   
   }, 500);
+   
+  setIsLoad(false)
  }, []);
   return (
    <AnimatePresence >
-      {!isLoad ? <p>loading...</p>
+      {!isLoad ?  <LoadingBar
+                    color='#f11946'
+                    progress={progress}
+                    onLoaderFinished={() => setProgress(0)}
+                  />
       :(       
         // <div stylreade={ mobile ? { width: '420px', height:'700px', overflow: 'scroll'}: {}}>
         <div className="scroll-smooth hover:scroll-auto " style={dark ? { background: '#21212c', color: 'white', borderColor: 'white' }:{ background: '#f4dfdf', color: 'black', borderColor: 'black' }}>
         <div onClick={handlDark} className='fixed z-40 bg-red-600 px-2 -translate-x-5 top-80 rotate-90 font-bold'> #{dark ? 'Light':'Dark'}</div>
          {/* <div onClick={()=> setMobile(!mobile)} className='hidden md:fixed md:block right-0 top-80 font-bold text-teal-50'>responsive</div> */}
-         <LoadingBar>
+    
           <Show show={ show } setShow={ setShow } />
           <ErrorBoundry><Header/></ErrorBoundry>
           <ErrorBoundry><Home setShow={setShow} /></ErrorBoundry>
@@ -68,7 +69,7 @@ function App() {
           <ErrorBoundry><Contact /></ErrorBoundry>
           <ErrorBoundry><Footer /></ErrorBoundry>
           <ErrorBoundry><BacKTotop /></ErrorBoundry>
-         </LoadingBar>
+       
      </div>
         // </div>
        ) 

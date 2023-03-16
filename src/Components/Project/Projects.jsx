@@ -1,15 +1,45 @@
 import React,{useState, useEffect} from 'react'
-import {projectsData} from '../../data';
-import {projectNav} from '../../data';
+// import {projectsData} from '../../data';
 import Project from './Project';
+import supabase from '../../connection/env'
+
+const projectNav = [
+  {
+    name: 'all',
+  },
+  {
+    name: 'UI/UX Design',
+  },
+  {
+    name: 'web development',
+  },
+  {
+    name: 'branding',
+  },
+];
 
 const Projects = () => {
     const [item, setItem] = useState({name: 'all'});
     const [project, setProject] = useState([]);
-    const [active, setActive] = useState(0);
+  const [active, setActive] = useState(0);
+  
+   const [data, setData] = useState();
+  const [error, setError] = useState();
+  const [loading, setLoading] = useState(false);
  
+    useEffect(() =>{      
+          async function fetchData()
+    {
+      setLoading(true);
+      const { data, error } = await supabase.from('project').select();
 
-    useEffect(() =>{
+      if (error) {
+        setError(error)
+          setData(null)
+        setLoading(false)
+      } else
+      {
+          setError(null)
         if (item.name === 'all') {
             setProject(projectsData)
        }else{
@@ -19,17 +49,25 @@ const Projects = () => {
             }
         );
             setProject(newProject);
-       }
-    },[item]);
+        }
+        setLoading(false)
+      }
+         
+    }
 
-    const handleClick = (e, index) =>{
+    fetchData();
+    }, [item]);
+  
+
+  
+      const handleClick = (e, index) =>{
         setItem({name: e.target.textContent.toLowerCase()})
         setActive(index);
     }
 
     return (
     <div >
-      <nav className='mb-12 max-w-xl mx-auto'>
+      {/* <nav className='mb-12 max-w-xl mx-auto'>
         <ul  className='flex flex-col md:flex-row 
         justify-evenly items-center font-bold'
         >
@@ -37,7 +75,6 @@ const Projects = () => {
                 return (
                     <li onClick={(e)=> {
                         handleClick(e, index)
-
                     }}
                     className={`${active === index ? 'active' : ''}
                     cursor-pointer capitalize m-4 hover:text-gray-700`}
@@ -54,7 +91,7 @@ const Projects = () => {
                 )
             })
         }
-    </section>
+    </section> */}
     </div>
   )
 }

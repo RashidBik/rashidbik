@@ -93,7 +93,7 @@ const Comment = () =>{
       <div>
         {
           comments.map((item, index) => (
-            <div>
+            <div key={index}>
                   <div className='border rounded-xl flex items-center    '>
           <div className='p-4'>
             <div className='border w-10 h-10 rounded-full bg-green-300 '></div>

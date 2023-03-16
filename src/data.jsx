@@ -1,71 +1,10 @@
-// import { useEffect, useState } from 'react';
-
-// import { createClient } from "@supabase/supabase-js";
-
-// const API_URL="https://vwnvvsmjitnwqeexzhfz.supabase.co"
-// const API_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ3bnZ2c21qaXRud3FlZXh6aGZ6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2Nzg4ODk0MjQsImV4cCI6MTk5NDQ2NTQyNH0.cmCuiMpQghc_NzrxQp8T-Z3OJ0RSnUChsPFyIjrcvgs"
-// const supabse = createClient(API_URL, API_KEY);
-
-// export default function data(url)
-// {
-//   const [data, setData] = useState();
-//   const [error, setError] = useState();
-//   const [loading, setLoading] = useState(false);
-  
-//   useEffect(() => {
-//     async function fetchData(params)
-//     {
-//       setLoading(true);
-//       const { data, error } = await supabse.from('rashidbik').select();
-
-//       if (error) {
-//         setError(error)
-//         setData(null)
-//         setLoading(false)
-//       } else
-//       {
-//           setError(null)
-//         setData(data)
-//         setLoading(false)
-//       }
-//     }
-//   }, [input]);
-// return {data, error, loading}
-
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //  icons
 import {
   RiGithubFill,
   RiDribbbleLine,
-  RiMailFill,
-  RiMapPinFill,
   RiFacebookBoxLine,
-  RiLinkedinFill,
+  RiLinkedinFill
 } from 'react-icons/ri';
-
-// companies icons
-import FreelancerBrandIcon from './assets/img/brands/freelancer.png';
-import UpworkBrandIcon from './assets/img/brands/upwork.png';
-import FiverBrandIcon from './assets/img/brands/fiverr.png';
-import BehanceBrandIcon from './assets/img/brands/behance.png';
-import DribbbleBrandIcon from './assets/img/brands/dribbble.png';
 
 // projects images
 import Project1 from './assets/img/projects/p1.webp';
@@ -118,7 +57,6 @@ export const navigation = [
     href: 'contact',
   },
 ];
-
 // social
 export const socialIcon = [
   {
@@ -138,31 +76,6 @@ export const socialIcon = [
     href: 'https://dribbble.com/rashidbik',
   },
 ];
-// https://t.me/RRRRRRRRRASHID
-
-export const brands = [
-  {
-    img: FreelancerBrandIcon,
-    href: 'https://www.freelancer.com/',
-  },
-  {
-    img: UpworkBrandIcon,
-    href: 'https://www.upwork.com/',
-  },
-  {
-    img: FiverBrandIcon,
-    href: 'https://www.fiverr.com/',
-  },
-  {
-    img: BehanceBrandIcon,
-    href: 'https://www.behance.net/',
-  },
-  {
-    img: DribbbleBrandIcon,
-    href: 'https://dribbble.com/',
-  },
-];
-
 // projects
 export const projectsData = [
   {
@@ -214,23 +127,6 @@ export const projectsData = [
     discription: '',
   },
 ];
-
-// projects
-export const projectNav = [
-  {
-    name: 'all',
-  },
-  {
-    name: 'UI/UX Design',
-  },
-  {
-    name: 'web development',
-  },
-  {
-    name: 'branding',
-  },
-];
-
 // skill
 export const skills = [
   {
@@ -277,45 +173,5 @@ export const skills = [
   },
 ];
 
-// testimonials
-export const testimonials = [
-  {
-    authorImg: 'TestiImage1',
-    authorText:
-      '',
-    authorName: 'Olivia Doe',
-    authorPosition: 'Head of Design, Google',
-  },
-  {
-    authorImg: 'TestiImage2',
-    authorText:
-      '',
-    authorName: 'Olivia Doe',
-    authorPosition: 'Head of Design, Google',
-  },
-  {
-    authorImg: 'TestiImage3',
-    authorText:
-      '',
-    authorName: 'Olivia Doe',
-    authorPosition: 'Head of Design, Google',
-  },
-];
-
-// contact
-export const contact = [
-  {
-    icon: <RiMailFill />,
-    title: 'Have a question?',
-    subtitle: 'I am here to help you.',
-    description: 'Email me at abdurashid.bigzad1999@gmail.com',
-  },
-  {
-    icon: <RiMapPinFill />,
-    title: 'Current Location',
-    subtitle: 'Kabul, Afghanistan',
-    description: 'Serving clients worldwide',
-  },
-];
 
 

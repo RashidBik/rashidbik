@@ -1,9 +1,27 @@
 import React, { useRef } from 'react'
-import {contact} from '../data'
 import emailjs from 'emailjs-com';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+import {
+  RiMailFill,
+  RiMapPinFill
+} from 'react-icons/ri';
+
+const contact = [
+  {
+    icon: <RiMailFill />,
+    title: 'Have a question?',
+    subtitle: 'I am here to help you.',
+    description: 'Email me at abdurashid.bigzad1999@gmail.com',
+  },
+  {
+    icon: <RiMapPinFill />,
+    title: 'Current Location',
+    subtitle: 'Kabul, Afghanistan',
+    description: 'Serving clients worldwide',
+  },
+];
 
 function Contact() {
   const form = useRef();
