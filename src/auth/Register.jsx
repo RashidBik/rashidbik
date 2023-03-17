@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import Carton from './Carton';
 import supabase from '../connection/env';
-import human from "../assets/Madge-Waving.gif"
+import Waving from "../assets/Waving.gif"
 
 const Register = ({ handlauth }) =>
 {
@@ -111,7 +111,7 @@ const Register = ({ handlauth }) =>
                <input className='p-2 rounded-lg' type="email"  ref={email}  placeholder='Your Email' value={isEmail} onChange={handleEmail}  />
             </div>
                       <div className=' relative py-8'>
-                        { happy ? <img className='h-40 absolute -rotate-90 right-0 bottom-8  ' src={human} alt="human with a flower" />: '' }
+                        { happy ? <img className='h-40 absolute -rotate-90 right-0 bottom-8  ' src={Waving} alt="human with a flower" />: '' }
                         <input
                           className='text-lg text-gray-50 py-1 px-12 hover:animate-pulse rounded-lg border transition-all ' style={{background: `${bg}`}}
                           type="submit" value='Join' />
