@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai"
 import supabase from '../../connection/env';
 
-const Like = ({updateLike}) =>
+const Like = () =>
 {
   const [error, setError] = useState(false);
     const [like, setLike] = useState(false);
@@ -15,7 +15,6 @@ const Like = ({updateLike}) =>
         setError(true)
        } else {
         setLike(true)
-        updateLike()
       }
     }
   return (

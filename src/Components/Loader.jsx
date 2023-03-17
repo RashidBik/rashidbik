@@ -42,7 +42,7 @@ const loading2Variants = {
 } 
 const Loader = () => {
   return (
-    <div className='absolute w-full h-[100vh] pt-60 bg-black z-40'>
+    <div className='absolute w-full h-[100vh] pt-60 bg-white opacity-25 z-40'>
         <motion.div
         variants={loadingVariants}
         initial="hidden"

@@ -10,37 +10,9 @@ import "swiper/css/grid";
 
 SwiperCore.use([Pagination]);
 
-const testimonials = [
-  {
-    authorImg: 'TestiImage1',
-    authorText:
-      '',
-    authorName: 'Olivia Doe',
-    authorPosition: 'Head of Design, Google',
-  },
-  {
-    authorImg: 'TestiImage2',
-    authorText:
-      '',
-    authorName: 'Olivia Doe',
-    authorPosition: 'Head of Design, Google',
-  },
-  {
-    authorImg: 'TestiImage3',
-    authorText:
-      '',
-    authorName: 'Olivia Doe',
-    authorPosition: 'Head of Design, Google',
-  },
-];
-
-
-
-
 const TestimonialSlider = () =>
 {
-
-  const [news, setNews] = useState('');
+  const [news, setNews] = useState();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   
@@ -63,7 +35,7 @@ const TestimonialSlider = () =>
     }
     fetchData();
   }, []);
-console.log(news);
+
   return (
     <>
       <Swiper
@@ -77,13 +49,12 @@ console.log(news);
            slidesPerView={1}
            className='mySwiper'
           >  
-         {news.map((item) => {
-            // const {authorImg, authorText, authorName, authorPosition} = item;
+          {news && news.map((item, index) => {
             return (
-               <SwiperSlide key={item.id} >
-                <div className='p-4 md:py-11 lg:py-20 px-20'>
+               <SwiperSlide  >
+                <div className='p-4 md:py-11 lg:py-20 px-20' key={index}>
                   <div className=''>  
-                   <div className=' '>
+                   <div className=''>
                      <div className=''>
                         <p className='font-bold'>{item.name}</p>
                         <p className=''>{item.title}</p>
@@ -93,7 +64,7 @@ console.log(news);
                       </h5>
                     </div>
                  </div>
-                </div> 
+                </div>
               </SwiperSlide>
             )
         })}

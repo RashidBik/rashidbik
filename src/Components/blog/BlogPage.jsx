@@ -40,7 +40,7 @@ const BlogPage = () =>{
     <header>
       <div onClickCapture={handleBlur} className='p-2 flex flex-col justify-center items-center' >
         <div className='flex'>
-                <div style={{visibility: visible ? '': 'hidden'}} className='p-2  relative flex hover:animate-bounce'>
+                <div style={{visibility: visible ? '': 'hidden'}} className='p-2  relative flex md:hover:animate-bounce '>
              <div className={sec ? 'iconbefore justify-start' : 'iconbefore border-accent hover:border hover:before:border  before:border-accent '}>
               <div onClick={ () => setSec(true) } className={sec ? 'iconself translate-y-7 md:w-[400px] md:h-[96px] rounded-b-xl rounded-r-xl justify-start items-start ': 'iconself'}>
                 <MdSecurity  />      
@@ -55,7 +55,7 @@ const BlogPage = () =>{
             }
           
         </div>
-            <div style={{visibility: visible ? '': 'hidden'}} className='p-2  relative flex hover:animate-bounce'>
+            <div style={{visibility: visible ? '': 'hidden'}} className='p-2  relative flex md:hover:animate-bounce '>
              <div className={pen ? 'iconbefore justify-start' : 'iconbefore border-accent hover:border hover:before:border  before:border-accent  '}>
               <div onClick={()=> setPen(true)} className={pen ? 'iconself translate-y-7 md:w-[400px] md:h-[96px] rounded-b-xl rounded-r-xl justify-start items-start ': 'iconself'}>
                 <SiServerless  />                   
@@ -70,7 +70,7 @@ const BlogPage = () =>{
             }
           
         </div>
-            <div style={{visibility: visible ? '': 'hidden'}} className='p-2  relative flex hover:animate-bounce'>
+            <div style={{visibility: visible ? '': 'hidden'}} className='p-2  relative flex md:hover:animate-bounce '>
              <div className={tsk ? 'iconbefore justify-start' : 'iconbefore border-accent hover:border hover:before:border  before:border-accent '}>
               <div onClick={()=> setTsk(true)} className={tsk ? 'iconself translate-y-7 md:w-[400px] md:h-[96px] rounded-b-xl rounded-r-xl justify-start items-start ': 'iconself'}>
                 <RiTaskFill  />                 
@@ -85,7 +85,7 @@ const BlogPage = () =>{
             }
           
         </div>
-            <div style={{visibility: visible ? '': 'hidden'}} className='p-2  relative flex hover:animate-bounce'>
+            <div style={{visibility: visible ? '': 'hidden'}} className='p-2  relative flex md:hover:animate-bounce '>
              <div className={mob ? 'iconbefore justify-start' : 'iconbefore border-accent hover:border hover:before:border  before:border-accent '}>
               <div onClick={()=> setMob(true)} className={mob ? 'iconself translate-y-7 md:w-[400px] md:h-[96px] rounded-b-xl rounded-r-xl justify-start items-start ': 'iconself'}>
                 <IoLogoPwa  />                   
@@ -103,7 +103,7 @@ const BlogPage = () =>{
     </div>
 
         <div  className='flex'>
-                 <div style={{visibility: visible ? '': 'hidden'}} className='p-2  relative flex hover:animate-bounce'>
+                 <div style={{visibility: visible ? '': 'hidden'}} className='p-2  relative flex md:hover:animate-bounce '>
              <div className={mot ? 'iconbefore justify-start' : 'iconbefore border-accent hover:border hover:before:border  before:border-accent '}>
               <div onClick={()=> setMot(true)} className={mot ? 'iconself translate-y-7 md:w-[400px] md:h-[96px] rounded-b-xl rounded-r-xl justify-start items-start ': 'iconself'}>
                 <MdAutoAwesomeMotion  />                   
@@ -118,7 +118,7 @@ const BlogPage = () =>{
             }
           
         </div>
-            <div style={{visibility: visible ? '': 'hidden'}} className='p-2  relative flex hover:animate-bounce'>
+            <div style={{visibility: visible ? '': 'hidden'}} className='p-2  relative flex md:hover:animate-bounce '>
              <div className={pwa ? 'iconbefore justify-start' : 'iconbefore border-accent hover:border hover:before:border  before:border-accent '}>
               <div onClick={()=> setPwa(true)} className={pwa ? 'iconself translate-y-7 md:w-[400px] md:h-[96px] rounded-b-xl rounded-r-xl justify-start items-start ': 'iconself'}>
                 <BiUserVoice  />                   
@@ -133,7 +133,7 @@ const BlogPage = () =>{
             }
           
         </div>
-            <div style={{visibility: visible ? '': 'hidden'}} className='p-2  relative flex hover:animate-bounce'>
+            <div style={{visibility: visible ? '': 'hidden'}} className='p-2  relative flex md:hover:animate-bounce '>
              <div className={bot ? 'iconbefore justify-start' : 'iconbefore border-accent hover:border hover:before:border  before:border-accent '}>
               <div onClick={()=> setBot(true)} className={bot ? 'iconself translate-y-7 md:w-[400px] md:h-[96px] rounded-b-xl rounded-r-xl justify-start items-start ': 'iconself'}>
                 <BsPalette2  />                   
@@ -150,7 +150,7 @@ const BlogPage = () =>{
         </div>
      </div>
         <div className='flex'>
-                <div style={{visibility: visible ? '': 'hidden'}} className=' p-2 relative flex hover:animate-bounce'>
+                <div style={{visibility: visible ? '': 'hidden'}} className=' p-2 relative flex md:hover:animate-bounce '>
              <div className={ser ? 'iconbefore justify-start' : 'iconbefore border-accent hover:border hover:before:border  before:border-accent '}>
               <div onClick={()=> setSer(true)} className={ser ? 'iconself translate-y-7 md:w-[400px] md:h-[96px] rounded-b-xl rounded-r-xl justify-start items-start ': 'iconself'}>
                 <MdMobileFriendly  />                   
@@ -165,7 +165,7 @@ const BlogPage = () =>{
             }
           
         </div>
-            <div style={{visibility: visible ? '': 'hidden'}} className='p-2  relative flex hover:animate-bounce'>
+            <div style={{visibility: visible ? '': 'hidden'}} className='p-2  relative flex md:hover:animate-bounce '>
              <div className={pal ? 'iconbefore justify-start' : 'iconbefore border-accent hover:border hover:before:border  before:border-accent '}>
               <div onClick={()=> setPal(true)} className={pal ? 'iconself translate-y-7 md:w-[400px] md:h-[96px] rounded-b-xl rounded-r-xl justify-start items-start ': 'iconself'}>
                 <SiChatbot  />                   
@@ -180,7 +180,7 @@ const BlogPage = () =>{
             }
           
         </div>
-            <div style={{visibility: visible ? '': 'hidden'}} className='p-2  relative flex hover:animate-bounce'>
+            <div style={{visibility: visible ? '': 'hidden'}} className='p-2  relative flex md:hover:animate-bounce '>
              <div className={voi ? 'iconbefore justify-start' : 'iconbefore border-accent hover:border hover:before:border  before:border-accent '}>
               <div onClick={()=> setVoi(true)} className={voi ? 'iconself translate-y-7 md:w-[400px] md:h-[96px] rounded-b-xl rounded-r-xl justify-start items-start ': 'iconself'}>
                 <DiResponsive />                   
@@ -195,7 +195,7 @@ const BlogPage = () =>{
             }
           
         </div>
-            <div style={{visibility: visible ? '': 'hidden'}} className='p-2  relative flex hover:animate-bounce'>
+            <div style={{visibility: visible ? '': 'hidden'}} className='p-2  relative flex md:hover:animate-bounce '>
              <div className={drk ? 'iconbefore justify-start' : 'iconbefore border-accent hover:border hover:before:border  before:border-accent '}>
               <div onClick={()=> setDrk(true)} className={drk ? 'iconself translate-y-7 md:w-[400px] md:h-[96px] rounded-b-xl rounded-r-xl justify-start items-start': 'iconself'}>
                 <CgDarkMode  />                   

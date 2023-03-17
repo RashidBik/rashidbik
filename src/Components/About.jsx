@@ -4,17 +4,10 @@ import logo from '../assets/img/rashidbik.svg';
 import LineChart from './about/LineChart';
 import { AiOutlineHeart } from "react-icons/ai"
 import Like from './about/Like';
-import { store } from '../store';
 import supabase from '../connection/env';
   
 function About() {
   const [likeNum, setLikeNum] = useState();
-  const updateLike = () =>
-  {
-      let num = store.filter(l => l.liked)
-      setLikeNum(num.length)
-
-  }
 
   useEffect(() => {
     const getLikes = async() => {
@@ -66,7 +59,7 @@ function About() {
             <div className='flex justify-between p-4 border-b border-slate-300 text-xl rounded-md md:text-2xl'>
               <span>$</span>
               <p>Rashid Bik</p>
-                  <Like updateLike={ updateLike}  />
+                  <Like />
             </div>
             <div className='p-2 md:text-2xl md:p-8'>
               <div className='text-xs md:text-xl py-4'>

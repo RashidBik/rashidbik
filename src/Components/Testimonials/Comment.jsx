@@ -6,14 +6,11 @@ import 'react-toastify/dist/ReactToastify.css';
 import { TypeAnimation } from 'react-type-animation';
 import supabase from '../../connection/env';
 
-const commentsStore = [
-  {name: 'Some One', img: '', msg: 'hey you are the best', repl: {name: "rashid", msg: 'Thank You so muuuuch'}}
-]
 
 const Comment = () =>{
   const [auth, setAuth] = useState(false);
   const [comment, setComment] = useState(false);
-  const [comments, setComments] = useState(commentsStore);
+  const [comments, setComments] = useState();
   const [propname, setPropname] = useState('');
   const commentRef = useRef();
 
@@ -24,18 +21,16 @@ const Comment = () =>{
 
   useEffect(() =>
   {
-
     async function fetchData()
     {
       setLoading(true);
+      let { data, error } = await supabase
+        .from('comment')
+        .select('*')
 
-let { data, error } = await supabase
-  .from('comment')
-  .select('*')
       if (error)
       {
         setError(error)
-        setComments(commentsStore)
         setLoading(false)
       } else
       {
@@ -50,8 +45,9 @@ let { data, error } = await supabase
     if (localStorage.getItem('username')) {
       setAuth(true)
     }
-  }, []);
-  const postComment = async (e) =>
+  }, [auth]);
+
+  const postComment = async () =>
   {
    setLoading(true);
     const { data, error } = await supabase.from('comment').insert({
@@ -67,10 +63,9 @@ let { data, error } = await supabase
         setFormError(null)
         setMsg(data)
         setLoading(false)
-      }
-    
-    
+      }    
   }
+
   const handlauth = () =>
   {
     let props = localStorage.getItem('username')
@@ -78,13 +73,12 @@ let { data, error } = await supabase
             position: toast.POSITION.TOP_RIGHT
         });
     setAuth(true);  
-    setPropname(props)
+
   }
 
   return (
     <div className='p-4 lg:pl-40 lg:pr-80 flex flex-col '>
       <ToastContainer />
-     
       { comment ? (
         <div>
                {
@@ -122,7 +116,7 @@ let { data, error } = await supabase
       )}
       <div>
         {
-          comments.map((item) => (
+         comments && comments.map((item) => (
             <div key={item.id}>
                   <div className='border rounded-xl flex items-center    '>
           <div className='p-4'>
