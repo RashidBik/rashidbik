@@ -1,9 +1,12 @@
-import React from 'react'
-import { Swiper, SwiperSlide } from 'swiper/react'
+import React, { useEffect, useState } from 'react'
+import SwiperCore, {Pagination} from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import supabase from '../../connection/env';
+
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/grid";
-import SwiperCore, {Pagination} from 'swiper';
+
 
 SwiperCore.use([Pagination]);
 
@@ -34,7 +37,33 @@ const testimonials = [
 
 
 
-const TestimonialSlider = () => {
+const TestimonialSlider = () =>
+{
+
+  const [news, setNews] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  
+  useEffect(() => {
+    const fetchData = async () =>
+    {
+      setLoading(true)
+      let { data, error } = await supabase
+      .from('new')
+      .select('*')
+      
+      if (error) {
+        setLoading(false)
+        setError(error)
+      } else
+      {
+        setLoading(false)
+        setNews(data)
+      }
+    }
+    fetchData();
+  }, []);
+console.log(news);
   return (
     <>
       <Swiper
@@ -48,21 +77,19 @@ const TestimonialSlider = () => {
            slidesPerView={1}
            className='mySwiper'
           >  
-         {testimonials.map((item, index) => {
-            const {authorImg, authorText, authorName, authorPosition} = item;
+         {news.map((item) => {
+            // const {authorImg, authorText, authorName, authorPosition} = item;
             return (
-               <SwiperSlide key={index} >
+               <SwiperSlide key={item.id} >
                 <div className='p-4 md:py-11 lg:py-20 px-20'>
                   <div className=''>  
-                    {/* style={ { background: `url(${ authorImg })` } } */}
                    <div className=' '>
                      <div className=''>
-                        <p className='font-bold'>{authorName}</p>
-                        <p className=''>{authorPosition}</p>
+                        <p className='font-bold'>{item.name}</p>
+                        <p className=''>{item.title}</p>
                       </div>
                       <h5 className=' text-xs md:text-lg lg:text-xl' >
-                        { authorText }
-                        Lorem ipsum, dolor sit nesciunt quaerat omnis assumenda repudiandae doloremque iure reprehenderit officiis.
+                        {item.excerpt}
                       </h5>
                     </div>
                  </div>

@@ -5,17 +5,29 @@ import LineChart from './about/LineChart';
 import { AiOutlineHeart } from "react-icons/ai"
 import Like from './about/Like';
 import { store } from '../store';
-
-
-
+import supabase from '../connection/env';
   
 function About() {
-  const [likeNum, setLikeNum] = useState(0);
+  const [likeNum, setLikeNum] = useState();
   const updateLike = () =>
   {
       let num = store.filter(l => l.liked)
       setLikeNum(num.length)
-}
+
+  }
+
+  useEffect(() => {
+    const getLikes = async() => {
+      const { data, error } = await supabase
+        .from('likes')
+        .select('*');
+      
+      if (!error) {
+        setLikeNum(data.length)
+      }
+    }
+    getLikes();
+  }, []);
 
   return (
     <>
@@ -43,8 +55,8 @@ function About() {
       <div className='border shadow shadow-gray-500 rounded-full h-20 w-20 md:h-60 md:w-60 bg-cover ' style={{backgroundImage: `url(${image})`}}></div>
      </div>
      <div className='flex pb-4 text-xl'> 
-      <p className=''>{likeNum}</p>
-        <AiOutlineHeart />
+      <p className=' font-madi text-4xl '>{likeNum}</p>
+        <AiOutlineHeart className='text-red-500' />
      </div>
     {/* //////////// */}
     <div className='grid md:grid-cols-2 md:px-16 md:py-8'>

@@ -1,9 +1,10 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import {AiOutlineArrowRight} from 'react-icons/ai'
 import Register from '../../auth/Register';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { TypeAnimation } from 'react-type-animation';
+import supabase from '../../connection/env';
 
 const commentsStore = [
   {name: 'Some One', img: '', msg: 'hey you are the best', repl: {name: "rashid", msg: 'Thank You so muuuuch'}}
@@ -16,42 +17,70 @@ const Comment = () =>{
   const [propname, setPropname] = useState('');
   const commentRef = useRef();
 
-  // useEffect(() => {
-  //   fetch('http://localhost/somewhrer')
-  //     .then(res => res.json())
-  //     .then(result => console.log(result))
-  //     .catch(err => console.log(err));
- 
-  // }, []);
+  const [error, setError] = useState();
+  const [formError, setFormError] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [msg, setMsg] = useState();
 
-  const postComment = (e) =>
+  useEffect(() =>
   {
-    e.preventDefault();
-    fetch({
-      url: 'http://localhost/somehow',
-      method: 'post',
-      headers: {
-        'Content-Type': 'application/json'
+
+    async function fetchData()
+    {
+      setLoading(true);
+
+let { data, error } = await supabase
+  .from('comment')
+  .select('*')
+      if (error)
+      {
+        setError(error)
+        setComments(commentsStore)
+        setLoading(false)
+      } else
+      {
+        setError(null)
+        setComments(data)
+        setLoading(false)
       }
-    }).then(res => res.json()).then(result => console.log(result)).catch(err => console.log(err));
-  }
   
-  const handlauth = (props) =>
+    }
+    fetchData();  
+    
+    if (localStorage.getItem('username')) {
+      setAuth(true)
+    }
+  }, []);
+  const postComment = async (e) =>
   {
+   setLoading(true);
+    const { data, error } = await supabase.from('comment').insert({
+      text: commentRef.current.value,
+      username: localStorage.getItem('username')
+      });
+      if (error)
+      {
+        setFormError(error)
+        setLoading(false)
+      } else
+      {
+        setFormError(null)
+        setMsg(data)
+        setLoading(false)
+      }
+    
+    
+  }
+  const handlauth = () =>
+  {
+    let props = localStorage.getItem('username')
       toast.success(`Hey Thank You ${props}`, {
             position: toast.POSITION.TOP_RIGHT
         });
     setAuth(true);  
     setPropname(props)
   }
-  const addComment = (e) =>
-  {
-    e.preventDefault();
-    const newComment = { name: propname, img: '', msg: commentRef.current.value, repl: '' };
-    setComments([...comments, newComment])
-    commentRef.current.value = ''
-    
-  }
+
   return (
     <div className='p-4 lg:pl-40 lg:pr-80 flex flex-col '>
       <ToastContainer />
@@ -60,10 +89,11 @@ const Comment = () =>{
         <div>
                {
         auth ? (
-            <form onSubmit={addComment}>
-              <div className='px-20 py-8 flex'>
-                  <textarea className='w-full h-11 rounded-xl p-4 bg-inherit outline-none hover:placeholder:text-lg ' type="text" ref={commentRef} placeholder='write your comment here...' required/>  
-                  <input type="submit" value="Add" className=' hover:border border-red-300 py-1 px-4 rounded-lg bg-red-500 mt-4'/>
+            <form onSubmit={postComment}>
+              <div className='px-20 py-8 flex flex-col items-center '>
+                  <textarea className=' flex flex-col w-full h-11 rounded-xl p-4 bg-inherit outline-none hover:placeholder:text-lg ' type="text" ref={commentRef} placeholder='write your comment here...' required/>  
+                  <input type="submit" value="Add" className=' hover:border border-green-300 py-1 w-40 rounded-lg bg-green-500 mt-4'/>
+                  <input type="reset" value="Cancel" className=' hover:border border-red-300 py-1 w-40 rounded-lg bg-red-500 mt-4'/>
               </div>
             </form>
             ): (
@@ -92,27 +122,29 @@ const Comment = () =>{
       )}
       <div>
         {
-          comments.map((item, index) => (
-            <div key={index}>
+          comments.map((item) => (
+            <div key={item.id}>
                   <div className='border rounded-xl flex items-center    '>
           <div className='p-4'>
             <div className='border w-10 h-10 rounded-full bg-green-300 '></div>
           </div>
-          <div className='p-2 flex '>
-            <p className='font-black pr-2 border-r border-gray-400'>{item.name}</p>
-                  <p className='px-2'> { item.msg }</p>
+          <div className=' relative first-letter:p-2 flex '>
+            <p className='  font-black pr-2 border-r border-gray-400'>{item.username}</p>
+                  <p className='px-2'> { item.text }</p>
+                  <small className=' absolute -top-4 left-4 text-[8px]'>{ item.created_at }</small>
           </div>
       </div>
       {/* replaiessssssss */}
-          <div className='p-4 flex items-center text-xs'> <small><AiOutlineArrowRight/></small>
+          { item.reply ? (
+              <div className='p-4 flex items-center text-xs'> <small><AiOutlineArrowRight /></small>
           <div className='p-4'>
-                  { item.repl.name && <div className='border w-10 h-10 rounded-full bg-red-300 '></div> }
+                  <div className='border w-10 h-10 rounded-full bg-red-300 '></div> 
           </div>
           <div className='p-2 flex '>
-                  <p className='font-black px-2 border-r border-gray-400'>{ item.repl.name }</p>
-                  <p className='px-2'> { item.repl.msg }</p>
-          </div>
-        </div>
+                  <p className='font-black px-2 border-r border-gray-400'>Rashid</p>
+                  <p className='px-2'> { item.reply }</p>
+                  </div></div>):
+              ''}    
             </div>
           ))
         }

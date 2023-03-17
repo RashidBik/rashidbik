@@ -41,9 +41,9 @@ const Projects = () => {
       {
           setError(null)
         if (item.name === 'all') {
-            setProject(projectsData)
+            setProject(data)
        }else{
-        const newProject = projectsData.filter(
+        const newProject = data.filter(
             (project) => {
                 return project.category.toLowerCase() === item.name;
             }
@@ -67,7 +67,7 @@ const Projects = () => {
 
     return (
     <div >
-      {/* <nav className='mb-12 max-w-xl mx-auto'>
+      <nav className='mb-12 max-w-xl mx-auto'>
         <ul  className='flex flex-col md:flex-row 
         justify-evenly items-center font-bold'
         >
@@ -91,7 +91,7 @@ const Projects = () => {
                 )
             })
         }
-    </section> */}
+    </section>
     </div>
   )
 }

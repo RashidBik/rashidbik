@@ -1,24 +1,22 @@
 import React, { useState } from 'react'
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai"
-
-import { store } from '../../store';
+import supabase from '../../connection/env';
 
 const Like = ({updateLike}) =>
 {
+  const [error, setError] = useState(false);
     const [like, setLike] = useState(false);
-    const submitLike = () =>
+    const submitLike = async () =>
     {
-        // fetch({
-        //     method: 'put',
-        //     url: 'api://somewhere',
-        //     body: 'liked',
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     }
-        // })
-        store[0].liked = true
+      const { data, error } = await supabase
+        .from('likes')
+        .insert([{}]);
+       if (error) {
+        setError(true)
+       } else {
         setLike(true)
         updateLike()
+      }
     }
   return (
     <div>

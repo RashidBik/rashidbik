@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import Carton from './Carton';
+import supabase from '../connection/env';
 
 const Register = ({ handlauth }) =>
 {
@@ -9,14 +10,32 @@ const Register = ({ handlauth }) =>
   const [isEmail, setIsEmail] = useState('');
   const [bg, setBg] = useState('red');
   const [happy, setHappy] = useState(false);
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
+
     const name = useRef();
     const email = useRef();
 
-    const handlSubmit = (e) =>
+    const handlSubmit = async (e) =>
     {
-        e.preventDefault()
+      setLoading(true)
+      e.preventDefault()
+      const { data, error } = await supabase
+          .from('user')
+          .insert([
+            { email: email.current.value, username: name.current.value },
+          ])
+          
+      if (error) {
+        setLoading(false)
+      } else
+      {
+        setLoading(false)
         setShow(false)
-        handlauth(name.current.value)
+        localStorage.setItem('username', name.current.value)
+        handlauth()
+      }
+
   
     }
     const showModalVariants = {
@@ -76,7 +95,7 @@ const handleEmail = (e) =>
       initial='hidden'
       animate='visible'
       exit='exit'
-      className=' bg-blue-300 m-auto w-[500px] h-[600px] rounded-xl '>
+      className=' bg-yellow-400 m-auto w-[500px] h-[600px] rounded-xl '>
         <div>
           <div>
               <Carton />
@@ -85,19 +104,19 @@ const handleEmail = (e) =>
                  <form onSubmit={handlSubmit}>
                                       <div className='flex flex-col  py-2 px-16 rounded-xl'>
                                           <p className='text-left'>Name <span className='text-red-600'>*</span></p>
-                <input className='p-2 rounded-lg' type="text"  ref={name} placeholder='Your Name' value={isName} onChange={handleName} required="true" />
+                <input className='p-2 rounded-lg' type="text"  ref={name} placeholder='Your Name' value={isName} onChange={handleName} required={true} />
             </div>
                                       <div className='flex flex-col  py-2 px-16 rounded-xl'>
                                           <p className='text-left'>Email</p>
                <input className='p-2 rounded-lg' type="email"  ref={email}  placeholder='Your Email' value={isEmail} onChange={handleEmail}  />
             </div>
-                    <div className='py-8'>
-                       <input
-                className='text-lg text-gray-50 py-1 px-12 hover:animate-pulse rounded-lg border transition-all ' style={{background: `${bg}`}}
-                type="submit" value='Join' />
-           </div>
+                      <div className=' relative py-8'>
+                        { happy ? <img className='h-40 absolute -rotate-90 right-0 bottom-8  ' src="src/assets/Madge-Waving.gif" alt="" />: '' }
+                        <input
+                          className='text-lg text-gray-50 py-1 px-12 hover:animate-pulse rounded-lg border transition-all ' style={{background: `${bg}`}}
+                          type="submit" value='Join' />
+                      </div>
                   </form>   
-                  { happy ? <img className='h-80 ' src="src/assets/Madge-Waving.gif" alt="" />: '' }
                 </div>     
          
         </div>
