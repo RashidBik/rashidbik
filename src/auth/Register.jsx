@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import Carton from './Carton';
 import supabase from '../connection/env';
+import human from "../assets/Madge-Waving.gif"
 
 const Register = ({ handlauth }) =>
 {
@@ -59,27 +60,26 @@ const Register = ({ handlauth }) =>
         }
     }
     }
+    const handleName = (e) =>
+    {
+      e.preventDefault();
+      setBg('red')
+      setIsName(e.target.value)
+      if (isName.length > 1) {
+        setBg('green')
+      }
+    }
+    const handleEmail = (e) =>
+      {
+        e.preventDefault();
+      
+      setIsEmail(e.target.value)
     
-  const handleName = (e) =>
-  {
-    e.preventDefault();
-    setBg('red')
-    setIsName(e.target.value)
-    if (isName.length > 1) {
-      setBg('green')
+        if (isEmail.includes(`@` && '.')) {
+          setHappy(true)
+        }
+      
     }
-  }
-const handleEmail = (e) =>
-  {
-    e.preventDefault();
-   
-  setIsEmail(e.target.value)
- 
-    if (isEmail.includes(`@` && '.')) {
-      setHappy(true)
-    }
-  
-}
   return (
     <>
      <AnimatePresence>
@@ -111,7 +111,7 @@ const handleEmail = (e) =>
                <input className='p-2 rounded-lg' type="email"  ref={email}  placeholder='Your Email' value={isEmail} onChange={handleEmail}  />
             </div>
                       <div className=' relative py-8'>
-                        { happy ? <img className='h-40 absolute -rotate-90 right-0 bottom-8  ' src="src/assets/Madge-Waving.gif" alt="" />: '' }
+                        { happy ? <img className='h-40 absolute -rotate-90 right-0 bottom-8  ' src={human} alt="human with a flower" />: '' }
                         <input
                           className='text-lg text-gray-50 py-1 px-12 hover:animate-pulse rounded-lg border transition-all ' style={{background: `${bg}`}}
                           type="submit" value='Join' />

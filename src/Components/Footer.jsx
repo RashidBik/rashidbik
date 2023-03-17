@@ -1,5 +1,6 @@
 import React from 'react'
-import {socialIcon} from '../data'
+import { socialIcon } from '../data'
+import logo from "../assets/img/rashidbik.svg";
 
 
 const Footer = () => {
@@ -18,7 +19,7 @@ const Footer = () => {
                 })}
             </div>
             <div className='font-black font-[cursive]'>
-            <img src="src/assets/img/rashidbik.svg"
+            <img src={logo}
                 className='w-[90px]'
           />            </div>
             <p className=''>

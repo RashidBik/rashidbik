@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { TypeAnimation } from 'react-type-animation';
 import Projects from './Projects'
-
+import purple from "../../assets/purplearrowright.gif"
+import wallpaper from "../../assets/img/wallpaper.jpg"
 
 const Portfolio = () => {
   const [vis, setVis] = useState(false);
@@ -17,8 +18,8 @@ const Portfolio = () => {
           font-lobster
           transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300 
           '><h1 className='p-12'>My Latest Work </h1>
-            <div className='border  md:w-[600px] md:h-[300px] opacity-50 p-2 bg-[url("src/assets/img/wallpaper.jpg")] flex justify-center items-center transition-all' style={{height: vis ? '50px': '' }}>
-              <img style={{height: vis ? '40px': ''}} className='h-20 hover:h-[69px] hover:animate-pulse transition-all ' src="src/assets/purplearrowright.gif" alt="" />
+            <div className='border  md:w-[600px] md:h-[300px] opacity-50 p-2 flex justify-center items-center transition-all' style={ { height: vis ? '50px' : '', background: `url(${wallpaper})`  }}>
+              <img style={{height: vis ? '40px': ''}} className='h-20 hover:h-[69px] hover:animate-pulse transition-all ' src={purple} alt="purple gif" />
                <h6 className='text-sm  cursor-pointer '> {vis ? 'close the window':'Click To See Some'}
               </h6>
             </div>

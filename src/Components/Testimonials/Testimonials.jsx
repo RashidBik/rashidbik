@@ -1,5 +1,6 @@
 import React from 'react'
 import TestimonialSlider from './TestimonialSlider'
+import heart from "../../assets/Madge-with-hearts.gif"
 import Comment from './Comment'
 
 function Testimonials() {
@@ -23,7 +24,7 @@ function Testimonials() {
         </div>
         <div className='flex border bg-blue-200 shadow-md '>
           <div className='relative w-96 md:w-[600px] lg:w-[800px] md:p-4 lg:px-11'>
-              <img className=' absolute bottom-0 ' src="src/assets/Madge-with-hearts.gif" alt="heart" />
+              <img className=' absolute bottom-0 ' src={heart} alt="heart" />
           </div>
         <TestimonialSlider />
         </div>
