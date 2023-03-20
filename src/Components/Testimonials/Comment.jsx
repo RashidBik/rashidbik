@@ -1,14 +1,17 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import {AiOutlineArrowRight} from 'react-icons/ai'
 import Register from '../../auth/Register';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { TypeAnimation } from 'react-type-animation';
 import supabase from '../../connection/env';
+import { Context } from '../../context/auth';
 
 
-const Comment = () =>{
-  const [auth, setAuth] = useState(false);
+
+const Comment = () =>
+{
+  const {auth, setAuth} = useContext(Context);
   const [comment, setComment] = useState(false);
   const [comments, setComments] = useState();
   const [propname, setPropname] = useState('');
@@ -19,7 +22,9 @@ const Comment = () =>{
   const [loading, setLoading] = useState(false);
   const [msg, setMsg] = useState();
 
-const {id, username} = localStorage.getItem('user')
+    if (auth) {
+      const {id, username} = localStorage.getItem('user')
+    }
 
   useEffect(() =>
   {

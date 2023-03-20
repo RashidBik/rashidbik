@@ -1,17 +1,21 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import supabase from '../connection/env'
+import { Context } from '../context/auth'
 import ChatBox from './ChatBox'
+
 
 const Chat = ({ show, setShow }) =>
 {
+  const { auth, setAuth } = useContext(Context);
   const [error, setError] = useState(false);
   const [data, setData] = useState();
   const [loading, setLoading] = useState(false);
   const text = useRef();
 
-  const { id, username } = localStorage.getItem('user');
-
+if (auth) {
+    const { id, username } = localStorage.getItem('user');
+}
 
   const handleText = async() =>
   {
@@ -77,12 +81,12 @@ const Chat = ({ show, setShow }) =>
                 <button onClick={ () => setShow(false) } className='font-bold px-2 text-red-600 '>back</button>
             </header>                        
                     <div className=' overflow-auto h-[290px]'>
-                      <ChatBox />
+                   {auth ?    <ChatBox />: ''}
                     </div>    
              <div className=' absolute bottom-0  w-full px-4 py-2'>
               <footer className='flex border-t p-1  border-lime-400 '>
                   <input className='outline-none p-1 bg-[#1f8b252b]' ref={text} type="text" placeholder='write text...'/>
-                  <button onClick={handleText} className='pl-4 text-[#076711] font-bold'>send</button>
+                  <button onClick={auth && handleText} className='pl-4 text-[#076711] font-bold'>send</button>
               </footer>
           </div>         
         </div>

@@ -15,10 +15,13 @@ import Skills from './Components/Skills';
 import Footer from './Components/Footer';
 import BacKTotop from './Components/BacKTotop';
 import Show from './Show';
+import { Context } from './context/auth';
 
  let bar = 0
 
-function App() {
+function App()
+{
+  const [auth, setAuth] = useState(false);
  const [show, setShow] = useState(false);
   const [loading, setLoading] = useState(false);
   const [dark, setDark] = useState(false);
@@ -55,17 +58,19 @@ function App() {
         <div onClick={handlDark} className='fixed z-40 bg-red-600 px-2 -translate-x-5 top-80 rotate-90 font-bold'> #{dark ? 'Light':'Dark'}</div>
          {/* <div onClick={()=> setMobile(!mobile)} className='hidden md:fixed md:block right-0 top-80 font-bold text-teal-50'>responsive</div> */}
           <Show show={ show } setShow={ setShow } />
-          <ErrorBoundry><Header/></ErrorBoundry>
-          <ErrorBoundry><Home setShow={setShow} /></ErrorBoundry>
-          <ErrorBoundry><Brands /></ErrorBoundry>
-          <ErrorBoundry><About /></ErrorBoundry>
-          <ErrorBoundry><Skills /></ErrorBoundry>
-          <ErrorBoundry><Portfolio /></ErrorBoundry>
-          <ErrorBoundry><Services /></ErrorBoundry>
-          <ErrorBoundry><Testimonials /></ErrorBoundry>
-          <ErrorBoundry><Contact /></ErrorBoundry>
-          <ErrorBoundry><Footer /></ErrorBoundry>
-          <ErrorBoundry><BacKTotop /></ErrorBoundry>
+            <Context.Provider value={{auth, setAuth}}>
+                <ErrorBoundry><Header/></ErrorBoundry>
+                <ErrorBoundry><Home setShow={setShow} /></ErrorBoundry>
+                <ErrorBoundry><Brands /></ErrorBoundry>
+                <ErrorBoundry><About /></ErrorBoundry>
+                <ErrorBoundry><Skills /></ErrorBoundry>
+                <ErrorBoundry><Portfolio /></ErrorBoundry>
+                <ErrorBoundry><Services /></ErrorBoundry>
+                <ErrorBoundry><Testimonials /></ErrorBoundry>
+                <ErrorBoundry><Contact /></ErrorBoundry>
+                <ErrorBoundry><Footer /></ErrorBoundry>
+                <ErrorBoundry><BacKTotop /></ErrorBoundry>
+          </Context.Provider>
         </div>
         // </div>
        ) 
