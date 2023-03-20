@@ -1,11 +1,38 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
+import supabase from '../connection/env'
 import ChatBox from './ChatBox'
-
 
 const Chat = ({ show, setShow }) =>
 {
-    // const [show, setShow] = useState(
+  const [error, setError] = useState(false);
+  const [data, setData] = useState();
+  const [loading, setLoading] = useState(false);
+  const text = useRef();
+
+  const { id, username } = localStorage.getItem('user');
+
+
+  const handleText = async() =>
+  {
+    setLoading(true)
+    const { data, error } = await supabase.from('messages')
+      .insert({
+        userid: id,
+        text: text.current.value
+      });
+
+      if (error) {
+        setError(true)
+        setLoading(false)
+        console.log(error);
+      } else
+      {
+        setData(data)
+        setLoading(false)
+      }
+  }
+
  const showModalVariants = {
      hidden: {
        opacity: 0
@@ -54,8 +81,8 @@ const Chat = ({ show, setShow }) =>
                     </div>    
              <div className=' absolute bottom-0  w-full px-4 py-2'>
               <footer className='flex border-t p-1  border-lime-400 '>
-                  <input className='outline-none p-1 bg-[#1f8b252b]' type="text" placeholder='write text...'/>
-                  <button className='pl-4 text-[#076711] font-bold'>send</button>
+                  <input className='outline-none p-1 bg-[#1f8b252b]' ref={text} type="text" placeholder='write text...'/>
+                  <button onClick={handleText} className='pl-4 text-[#076711] font-bold'>send</button>
               </footer>
           </div>         
         </div>

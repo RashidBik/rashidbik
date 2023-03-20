@@ -23,9 +23,9 @@ const Register = ({ handlauth }) =>
       e.preventDefault()
       const { data, error } = await supabase
           .from('user')
-          .insert([
+          .insert(
             { email: email.current.value, username: name.current.value },
-          ])
+          ).select('*')
           
       if (error) {
         setLoading(false)
@@ -33,7 +33,7 @@ const Register = ({ handlauth }) =>
       {
         setLoading(false)
         setShow(false)
-        localStorage.setItem('username', name.current.value)
+        localStorage.setItem('user', data[0])
         handlauth()
       }
 
@@ -121,7 +121,6 @@ const Register = ({ handlauth }) =>
          
         </div>
     </motion.div>
-
       </motion.div>
       )
     }

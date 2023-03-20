@@ -19,6 +19,8 @@ const Comment = () =>{
   const [loading, setLoading] = useState(false);
   const [msg, setMsg] = useState();
 
+const {id, username} = localStorage.getItem('user')
+
   useEffect(() =>
   {
     async function fetchData()
@@ -42,7 +44,7 @@ const Comment = () =>{
     }
     fetchData();  
     
-    if (localStorage.getItem('username')) {
+    if (localStorage.getItem('user')) {
       setAuth(true)
     }
   }, [auth]);
@@ -52,7 +54,7 @@ const Comment = () =>{
    setLoading(true);
     const { data, error } = await supabase.from('comment').insert({
       text: commentRef.current.value,
-      username: localStorage.getItem('username')
+      username: username
       });
       if (error)
       {
@@ -68,8 +70,8 @@ const Comment = () =>{
 
   const handlauth = () =>
   {
-    let props = localStorage.getItem('username')
-      toast.success(`Hey Thank You ${props}`, {
+    let {username} = localStorage.getItem('user')
+      toast.success(`Hey Thank You ${username}`, {
             position: toast.POSITION.TOP_RIGHT
         });
     setAuth(true);  

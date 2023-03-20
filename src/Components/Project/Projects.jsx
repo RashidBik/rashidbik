@@ -58,9 +58,7 @@ const Projects = () => {
     fetchData();
     }, [item]);
   
-
-  
-      const handleClick = (e, index) =>{
+    const handleClick = (e, index) =>{
         setItem({name: e.target.textContent.toLowerCase()})
         setActive(index);
     }
@@ -85,7 +83,7 @@ const Projects = () => {
       </nav>
     <section className='grid grid-cols-2  lg:grid-cols-3 gap-y-12 gap-x-8'>
         {
-            project.map((item) => {
+          project &&  project.map((item) => {
                 return (
                     <Project item={item} key={item.id} />
                 )
