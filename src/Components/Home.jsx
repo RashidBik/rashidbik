@@ -61,7 +61,7 @@ function Home({setShow}) {
                 cursor={true}
                 repeat={Infinity}
                 style={{ fontSize: '2em' }}
-                className=" bg-gradient-to-tr from-[#a1634bab] to-[#1e7417ad]  "
+                className=" bg-[#f7f5f51e] "
               />
             </div>
             <motion.button className='py-4 mt-2 px-7 sm:mb-6 font-medium 

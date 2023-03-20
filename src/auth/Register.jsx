@@ -1,17 +1,20 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useEffect, useState, useContext } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import Carton from './Carton';
 import supabase from '../connection/env';
 import Waving from "../assets/Waving.gif"
+import { Context } from '../context/auth';
 
 const Register = ({ handlauth }) =>
 {
+  const {setAuth, auth} = useContext(Context);
   const [show, setShow] = useState(true);
   const [isName, setIsName] = useState('');
   const [isEmail, setIsEmail] = useState('');
   const [bg, setBg] = useState('red');
   const [happy, setHappy] = useState(false);
   const [error, setError] = useState('');
+  const [user, setUser] = useState();
   const [loading, setLoading] = useState(false);
 
     const name = useRef();
@@ -22,23 +25,25 @@ const Register = ({ handlauth }) =>
       setLoading(true)
       e.preventDefault()
       const { data, error } = await supabase
-          .from('user')
+      .from('user')
           .insert(
             { email: email.current.value, username: name.current.value },
-          ).select('*')
-          
-      if (error) {
-        setLoading(false)
-      } else
-      {
-        setLoading(false)
-        setShow(false)
-        localStorage.setItem('user', data[0])
+      ).select('*')
+              
+        if (error) {
+          setLoading(false)
+          setError(true)
+          return;
+        } else
+        {
+          setLoading(false)
+          setShow(false)        
+          setAuth(true)
+        }
+        localStorage.setItem('user', JSON.stringify(data[0]))
         handlauth()
-      }
+      }         
 
-  
-    }
     const showModalVariants = {
         hidden: {
         opacity: 0

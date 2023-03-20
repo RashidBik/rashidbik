@@ -7,22 +7,19 @@ import ChatBox from './ChatBox'
 
 const Chat = ({ show, setShow }) =>
 {
-  const { auth, setAuth } = useContext(Context);
+  const { auth, user } = useContext(Context);
   const [error, setError] = useState(false);
   const [data, setData] = useState();
   const [loading, setLoading] = useState(false);
-  const text = useRef();
-
-if (auth) {
-    const { id, username } = localStorage.getItem('user');
-}
+  const [message, setMessage] = useState(false);
+  let text = useRef();
 
   const handleText = async() =>
   {
     setLoading(true)
     const { data, error } = await supabase.from('messages')
       .insert({
-        userid: id,
+        userid: user.id,
         text: text.current.value
       });
 
@@ -34,30 +31,34 @@ if (auth) {
       {
         setData(data)
         setLoading(false)
+        text.current.value = ''
       }
   }
-
- const showModalVariants = {
-     hidden: {
-       opacity: 0
+  const handleMsg = () =>
+  {
+    setMessage(true)
+  }
+  const showModalVariants = {
+      hidden: {
+        opacity: 0
+      },
+      visible: {
+          opacity:1
+      }
+  }
+  const popUpVariants = {
+      hidden: {
+        opacity: 0,
+        y: '-100vh',
     },
     visible: {
-        opacity:1
+        opacity:1,
+        y: '100px',
+        transation: {
+          delay: 0.3,
+        }
     }
- }
- const popUpVariants = {
-    hidden: {
-      opacity: 0,
-      y: '-100vh',
-   },
-   visible: {
-       opacity:1,
-       y: '100px',
-       transation: {
-        delay: 0.3,
-       }
-   }
-}
+  }
     return (
     <>
      <AnimatePresence>
@@ -81,12 +82,12 @@ if (auth) {
                 <button onClick={ () => setShow(false) } className='font-bold px-2 text-red-600 '>back</button>
             </header>                        
                     <div className=' overflow-auto h-[290px]'>
-                   {auth ?    <ChatBox />: ''}
+                   {auth ?    <ChatBox />: <p className='text-xl text-red-400'>please login first</p>}
                     </div>    
              <div className=' absolute bottom-0  w-full px-4 py-2'>
               <footer className='flex border-t p-1  border-lime-400 '>
                   <input className='outline-none p-1 bg-[#1f8b252b]' ref={text} type="text" placeholder='write text...'/>
-                  <button onClick={auth && handleText} className='pl-4 text-[#076711] font-bold'>send</button>
+                  <button onClick={auth ? handleText:handleMsg} className='pl-4 text-[#076711] font-bold'>send</button>
               </footer>
           </div>         
         </div>

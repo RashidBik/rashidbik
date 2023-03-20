@@ -4,21 +4,18 @@ import { Context } from '../context/auth';
 
 const ChatBox = () =>
 {
-  const {auth, setAuth} = useContext(Context);
+  const {auth, user} = useContext(Context);
   const [data, setData] = useState();
   const [error, setError] = useState();
   const [loading, setLoading] = useState(false);
 
-  if (auth) {
-    const { id, username } = localStorage.getItem('user');
-  
      useEffect(() =>{      
           async function fetchData()
                 {
                   setLoading(true);
             let { data, error } = await supabase
               .from('messages')
-                .select("*").eq('userid', id)
+                .select("*").eq('userid', user.id)
             
                     if (error) {
                       setError(error)
@@ -31,8 +28,7 @@ const ChatBox = () =>
                 }
 
     fetchData();
-    }, []);
-  }
+    }, [auth]);
    
   
   return (

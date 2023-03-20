@@ -11,10 +11,9 @@ import { Context } from '../../context/auth';
 
 const Comment = () =>
 {
-  const {auth, setAuth} = useContext(Context);
+  const {auth, setAuth, user} = useContext(Context);
   const [comment, setComment] = useState(false);
   const [comments, setComments] = useState();
-  const [propname, setPropname] = useState('');
   const commentRef = useRef();
 
   const [error, setError] = useState();
@@ -22,10 +21,7 @@ const Comment = () =>
   const [loading, setLoading] = useState(false);
   const [msg, setMsg] = useState();
 
-    if (auth) {
-      const {id, username} = localStorage.getItem('user')
-    }
-
+    
   useEffect(() =>
   {
     async function fetchData()
@@ -48,10 +44,6 @@ const Comment = () =>
   
     }
     fetchData();  
-    
-    if (localStorage.getItem('user')) {
-      setAuth(true)
-    }
   }, [auth]);
 
   const postComment = async () =>
@@ -59,7 +51,7 @@ const Comment = () =>
    setLoading(true);
     const { data, error } = await supabase.from('comment').insert({
       text: commentRef.current.value,
-      username: username
+      username: user.username
       });
       if (error)
       {
@@ -75,13 +67,11 @@ const Comment = () =>
 
   const handlauth = () =>
   {
-    let {username} = localStorage.getItem('user')
-      toast.success(`Hey Thank You ${username}`, {
+  
+      toast.success(`Hey Thank You ${user.username}`, {
             position: toast.POSITION.TOP_RIGHT
         });
-    setAuth(true);  
-
-  }
+     }
 
   return (
     <div className='p-4 lg:pl-40 lg:pr-80 flex flex-col '>

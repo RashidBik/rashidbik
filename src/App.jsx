@@ -21,15 +21,19 @@ import { Context } from './context/auth';
 
 function App()
 {
+ 
   const [auth, setAuth] = useState(false);
  const [show, setShow] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [dark, setDark] = useState(false);
+  const [user, setUser] = useState(null);
   // const [mobile, setMobile] = useState(false);
   ///////////////////////////////
- const [progress, setProgress] = useState(bar)
+ const [progress, setProgress] = useState(0)
    
 /////////////////////////////////
+  
+  
   const handlDark = () =>
   {
     setDark(!dark)
@@ -37,18 +41,60 @@ function App()
  
   useEffect(() =>
   {
-   setLoading(true)
-  setTimeout(() => {
-    setLoading(true)
-        setProgress(bar++)
+    setUser(localStorage.getItem('user'));
+          
+  }, [user]);
+  
+
+//  
+  const [buffer, setBuffer] = React.useState(10);
+
+  const progressRef = React.useRef(() => {});
+  React.useEffect(() => {
+    progressRef.current = () => {
+      if (progress > 100) {
+        setProgress(0);
+        setBuffer(10);
         setLoading(false)
-  }, 1000);
-   
- }, []);
+      } else {
+        const diff = Math.random() * 10;
+        const diff2 = Math.random() * 10;
+        setProgress(progress + diff);
+        setBuffer(progress + diff + diff2);
+      }
+    };
+  });
+
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      progressRef.current();
+    }, 100);
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   return (
-   <AnimatePresence >
+    <AnimatePresence >
       {loading ?  <LoadingBar
-                    color='#f11946'
+                    color='green'
                     progress={progress}
                     onLoaderFinished={() => setProgress(0)}
                   />
@@ -58,7 +104,7 @@ function App()
         <div onClick={handlDark} className='fixed z-40 bg-red-600 px-2 -translate-x-5 top-80 rotate-90 font-bold'> #{dark ? 'Light':'Dark'}</div>
          {/* <div onClick={()=> setMobile(!mobile)} className='hidden md:fixed md:block right-0 top-80 font-bold text-teal-50'>responsive</div> */}
           <Show show={ show } setShow={ setShow } />
-            <Context.Provider value={{auth, setAuth}}>
+            <Context.Provider value={{auth, setAuth, user}}>
                 <ErrorBoundry><Header/></ErrorBoundry>
                 <ErrorBoundry><Home setShow={setShow} /></ErrorBoundry>
                 <ErrorBoundry><Brands /></ErrorBoundry>
