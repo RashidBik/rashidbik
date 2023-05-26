@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import image from '../assets/img/rashid2.jpg';
+import image from '../assets/img/rashid2.png';
 import logo from '../assets/img/rashidbik.svg';
 import LineChart from './about/LineChart';
 import { AiOutlineHeart } from "react-icons/ai"

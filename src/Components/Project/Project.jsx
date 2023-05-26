@@ -26,7 +26,7 @@ const Project = ({item}) => {
        onMouseOut={unPictureNav}
 
         className='absolute bottom-0 border-b rounded-b-2xl h-16 w-full flex flex-col'>
-          <a href={item.href} 
+          <a href={item.link} 
           className='text-2xl font-black hover:text-gray-100 font-lobster '>Lets See</a>
           <span className=' '>{item.discription}</span>
         </div>
